@@ -1,0 +1,55 @@
+<div class="navigation">
+    <h1 class="main_text">Навигация</h1>
+    <div class="line"></div>
+    <ul>
+        <li class="navigation_li1"><a href="#">Мои данные</a></li>
+        <li class="navigation_li2"><a href="#">История просмотра</a></li>
+        <li class="navigation_li3"><a href="#">Договоры</a></li>
+        <li class="navigation_li4"><a href="#">Документы</a></li>
+    </ul>
+    <ul>
+        <li class="navigation_li5"><a href="#">История отгрузок</a></li>
+        <li class="navigation_li6"><a href="#">Сообщения</a></li>
+        <li class="navigation_li7">
+            <a href="#">Отчеты</a>
+            <ul class="reports-list ">
+                <li><a href="#"><span class="circle"></span>Анализ продаж</a></li>
+                <li><a href="#"><span class="circle"></span>Взаиморасчеты</a></li>
+                <li><a href="#"><span class="circle"></span>дебиторская задолженность</a></li>
+                <li><a href="#"><span class="circle"></span>открытые объемы</a></li>
+                <li><a href="#"><span class="circle"></span>услуги</a></li>
+            </ul>
+        </li>
+        <li class="navigation_li8">
+            <a href="#">Заявки</a>
+            <ul class="reports-list ">
+                <li><a href="#"><span class="circle"></span>Анализ продаж</a></li>
+                <li><a href="#"><span class="circle"></span>Взаиморасчеты</a></li>
+                <li><a href="#"><span class="circle"></span>дебиторская задолженность</a></li>
+                <li><a href="#"><span class="circle"></span>открытые объемы</a></li>
+                <li><a href="#"><span class="circle"></span>услуги</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul>
+        <li class="navigation_li9"><a href="#">Справочники</a></li>
+        <li class="navigation_li10">
+            <a href="#">Рассылки</a>
+            <ul class="reports-list ">
+                <li><a href="#"><span class="circle"></span>Анализ продаж</a></li>
+                <li><a href="#"><span class="circle"></span>Взаиморасчеты</a></li>
+                <li><a href="#"><span class="circle"></span>дебиторская задолженность</a></li>
+                <li><a href="#"><span class="circle"></span>открытые объемы</a></li>
+                <li><a href="#"><span class="circle"></span>услуги</a></li>
+            </ul>
+        </li>
+        <li class="navigation_li11"><a href="#">Дополнительные</a></li>
+    </ul>
+</div>
+<script src="./libs/jq-1.12.4.js"></script>
+<script>
+    $('.navigation a').click(function (e) {
+        (e).preventDefault();
+        $(this).parent().children('.reports-list').toggleClass('active');
+    })
+</script>
