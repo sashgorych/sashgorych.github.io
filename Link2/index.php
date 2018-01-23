@@ -11,11 +11,14 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="./css/slick-theme.css"/>
+    <link rel="import" href="components/header.html">
+
 
 </head>
 
 <body>
 <div class="header">
+<?php require('https://sashgorych.github.io/Link2/components/header.html') ?>
 </div>
 
 <div class="history">
@@ -156,16 +159,19 @@
     </div>
 </div>
 <div class="footer_bg"></div>
-<script src="./libs/jq-1.12.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="./js/all.js"></script>
 <script type="text/javascript" src="./js/slick.js"></script>
 
 <script type="text/javascript">
-    $('.header').load('/components/header.html');
-    $('.consuption_navigation').load('/components/navigation.html');
-    $('.popular_x').load('/components/popular.html');
-    $('.arrears_x').load('/components/arrears.html');
-    $('.footer_bg').load('/components/footer.html');
+    var link = document.querySelector('link[rel=import]');
+    var content = link.import.querySelector('.header');
+    document.querySelector('.header').appendChild(content.cloneNode(true));
+//    $('.header').load('/components/header.html');
+//    $('.consuption_navigation').load('/components/navigation.html');
+//    $('.popular_x').load('/components/popular.html');
+//    $('.arrears_x').load('/components/arrears.html');
+//    $('.footer_bg').load('/components/footer.html');
 
     $(document).ready(function(){
         $('.slider').slick({
