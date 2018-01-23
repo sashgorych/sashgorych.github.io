@@ -1985,7 +1985,6 @@ body {
 }
 
 .successful .button_delete {
-  float: left;
   position: absolute;
   bottom: 0;
 }
