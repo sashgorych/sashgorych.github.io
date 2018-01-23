@@ -710,17 +710,10 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 20px 15px 20px 15px;
-  width: 50%;
+  width: 100%;
   float: left;
 }
 
-.drop_down_sites_right {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 20px 15px 20px 15px;
-  width: 50%;
-  float: right;
-}
 
 .logo_bg {
   height: 137px;
