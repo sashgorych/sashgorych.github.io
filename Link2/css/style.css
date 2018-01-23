@@ -1980,12 +1980,14 @@ body {
   margin: 25px 0 25px 24px;
   float: left;
   width: 31.7%;
+  position: relative;
   height: 367px;
 }
 
 .successful .button_delete {
   float: left;
-  margin-top: 39px;
+  position: absolute;
+  bottom: 0;
 }
 
 .successful a {
