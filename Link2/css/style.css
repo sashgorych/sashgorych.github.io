@@ -448,6 +448,7 @@ body {
 .mobile-menu {
   top: 140px;
   display: none;
+  z-index: 3333;
   background: #f2efeb;
   position: absolute;
   left: 0;
