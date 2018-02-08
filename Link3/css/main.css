@@ -160,6 +160,7 @@ input:focus {
   right: 66px; }
 
 .phrase {
+<<<<<<< HEAD
   width: 200px;
   height: 400px;
   position: absolute;
@@ -170,3 +171,15 @@ input:focus {
   text-align: center;
   font-size: 30px;
   font-weight: 700; }
+=======
+     width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 89px;
+    left: 115px; }
+.title_p{
+text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+>>>>>>> 6f78bfe86b657e75ca8d41d7d42d97853aaacfe4
