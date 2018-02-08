@@ -95,7 +95,7 @@ input:focus{
   //height: inherit;
 }
 .frame{
-  height: 90vh;
+  height: 70vh;
   overflow-y:scroll ;
 }
 .note{
@@ -106,12 +106,15 @@ input:focus{
   top: -95px;
   right: 66px;
 }
-.phrase{
-  margin-left: 40px;
-  margin-top: 32px;
+.phrase {
   width: 200px;
   height: 400px;
   position: absolute;
-  top: 0;
-  left:0;
+  top: 97px;
+  left: 115px;
+}
+.title_p{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
 }
