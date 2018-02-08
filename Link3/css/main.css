@@ -88,7 +88,7 @@
   display: -ms-flexbox;
   display: flex; }
 
-ul {
+.cont {
   width: 100%;
   list-style-type: none;
   padding: 18px;
@@ -103,7 +103,7 @@ ul {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
-  ul li {
+  .cont li {
     position: relative; }
 
 .msj:before {
@@ -160,6 +160,8 @@ input:focus {
   right: 66px; }
 
 .phrase {
+  margin-left: 40px;
+  margin-top: 32px;
   width: 200px;
   height: 400px;
   position: absolute;

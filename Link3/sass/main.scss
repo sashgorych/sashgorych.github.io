@@ -42,7 +42,7 @@
 .frame > div:last-of-type{
   position:absolute;bottom:5px;width:100%;display:flex;
 }
-ul {
+.cont {
   li{
     position: relative;
   }
@@ -107,6 +107,8 @@ input:focus{
   right: 66px;
 }
 .phrase{
+  margin-left: 40px;
+  margin-top: 32px;
   width: 200px;
   height: 400px;
   position: absolute;

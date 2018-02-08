@@ -26,116 +26,6 @@ function x() {
     });
 }
 
-// var phrases = {
-//     'зачем мне в париж': 'хз',
-//     'привет': 'Здравствуйте.',
-//     'Ростик дот': 'ну и круто',
-//     'как дела': 'отлично',
-//     'и у меня': 'что хочешь узнать',
-//     'отследить': 'Введите код Вашей посылки',
-//     'розка карт': 'она новая',
-//     'получить карт': 'Карту можно получить после первой покупки на соответствующую сумму <br> [похожее: золотая карта, серебряная карта]',
-//     'карт серебр': 'Серебряная карта выдается при сумарной суме покупок больше чем на 10 000',
-//     'карт золот': 'Золотая карта выдается при сумарной суме покупок больше чем на 10 000',
-//     'бонус': 'да конечно',
-//     'потеря карт': 'если Вы потеряли карту - передзвоните нашему менеджеру!',
-//     'потеря ее': 'если Вы потеряли карту - передзвоните нашему менеджеру!',
-//     'error': 'извените, я не знаю что ответить. попробуйте перефразировать вопрос'
-// };
-// document.onkeypress = function (event) {
-//     var answer = [];
-//     if ((event.keyCode == 0xA) || (event.keyCode == 0xD)) {
-//         var test=[]
-//         var sms = document.getElementById("sms").value;
-//         var sms_words = sms.split(' ');
-//         var count_of_answer = 0;
-//         var mas = [];
-//         for (var key in phrases) {
-//             var counter_of_all = 0;
-//             var counter = 0;
-//             var key_array = key.split(' ');
-//             // console.log('key_Array:' + key_array);
-//             // console.log('words_Array:' + sms_words);
-//             for (let i = 0; i < key_array.length; i++) {
-//                 for (let j = 0; j < sms_words.length; j++) {
-//                     // console.log('key[' + i + ']=' + key_array[i] + ' ' + 'words[' + j + ']=' + sms_words[j]);
-//                     var flag = true;
-//
-//                     // повне/неповне входження
-//                     if (sms_words[j] == key_array[i]) {
-//                         counter_of_all++;
-//                     }
-//                     // кінець повне/неповне входження
-//
-//
-//                     // коефіцієнт співпадіння
-//                     var koef1 = Math.floor(sms_words[j].length / 1.2);
-//                     var koef2 = Math.floor(key_array[i].length / 1.2);
-//                     // console.log('koef/all:'+koef2+'/'+key_array[i].length);
-//                     for (let p = 0; p < koef2; p++) {
-//                         if (!((sms_words[j])[p] == (key_array[i])[p])) {
-//                             flag = false;
-//                         }
-//                     }
-//                     // коефіцієнт співпадіння
-//
-//                     //перевірка на включення підстроки
-//                     // console.log('rivnist: ' + (sms_words[j].indexOf(key_array[i]) + 1 || key_array[i].indexOf(sms_words[j]) + 1) && flag)
-//                     if ((sms_words[j].indexOf(key_array[i]) + 1 || key_array[i].indexOf(sms_words[j]) + 1)) {
-//                         counter++;
-//                         test[count_of_answer]=sms_words[j];
-//                         // sms_words.splice(j, 1);
-//                     }
-//                     //перевірка на включення підстроки
-//
-//                 }
-//             }
-//
-//
-//
-//             if (counter_of_all == key_array.length && sms_words.length == key_array.length) {
-//                 console.log(key_array + ' повна фраза');
-//             }
-//             // console.log('counter: ' + counter)
-//             if (counter == key_array.length) {
-//                 // console.log(key_array + 'sss');
-//                 answer[count_of_answer] = key_array;
-//                 count_of_answer++;
-//                 for (let i = 0; i < count_of_answer; i++) {
-//                     mas[i] = answer[i].join(' ');
-//                 }
-//             }
-//         }
-//
-//
-//
-//
-//
-//         // console.log(count_of_answer + 'sssssssssssssssssssssssssssss')
-//         for (let i = 0; i < count_of_answer; i++) {
-//             if (!(mas.length == 0)) {
-//                 insertChat("you", phrases[mas[i]], 1500);
-//             } else {
-//                 insertChat("you", phrases.error, 1500);
-//
-//             }
-//         }
-//
-//
-//
-//
-//         console.log(test + ' TEST')
-//         // insertChat("you", "Hi, Pablo", 1500);
-//
-//
-//
-//
-//
-//
-//
-//     };
-// };
-
 (function print() {
     var me = {};
     me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
@@ -157,7 +47,6 @@ function x() {
     //-- No use time. It is a javaScript effect.
     function insertChat(who, text) {
         var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-        var original = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
 
         var control = "";
         var date = formatAMPM(new Date());
@@ -201,15 +90,17 @@ function x() {
     var phrases = {
         'привет': 'Здравствуйте.',
         'отследить': 'Введите код Вашей посылки',
-        'расска карт': 'Карта дает вам скидки на все услуги компании, обычная 5%, серебряная 10%, золотая 15%',
+        'нужн карт': 'Карта дает вам скидки на все услуги компании, обычная 5%, серебряная 10%, золотая 15%',
+        'дает карт': 'Карта дает вам скидки на все услуги компании, обычная 5%, серебряная 10%, золотая 15%',
+        'для чего карт': 'Карта дает вам скидки на все услуги компании, обычная 5%, серебряная 10%, золотая 15%',
         'возобновить карту': 'Чтобы возобновить карту подзвоните менеджеру',
         'получить карт': 'Карту можно получить после первой покупки на соответствующую сумму <br> [похожее: золотая карта, серебряная карта]',
         'карт серебр': 'Серебряная карта выдается при сумарной суме покупок больше чем на 10 000',
         'карт золот': 'Золотая карта выдается при сумарной суме покупок больше чем на 10 000',
-        'бонус': 'чтобы получить бонус воспользуйтесь картой',
-        'потеря карт': 'если Вы потеряли карту - передзвоните нашему менеджеру!',
-        'потеря ее': 'если Вы потеряли карту - передзвоните нашему менеджеру!',
-        'error': 'извените, я не знаю что ответить. попробуйте перефразировать вопрос'
+        'бонус': 'Чтобы получить бонус воспользуйтесь картой',
+        'потеря карт': 'Если Вы потеряли карту - передзвоните нашему менеджеру!',
+        'потеря ее': 'Если Вы потеряли карту - передзвоните нашему менеджеру!',
+        'error': 'Извените, я не знаю что ответить. Попробуйте перефразировать вопрос'
     };
 
     document.onkeypress = function (event) {
