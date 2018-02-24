@@ -2841,6 +2841,7 @@ body {
 .quation_test {
   cursor: pointer;
   width: 48px;
+  z-index:4;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 8px 12px;
