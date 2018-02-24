@@ -455,19 +455,7 @@
         $('.cover-div').removeClass('active');
 
     })
-    window.onscroll = function () {
-        var scroll = $('.fixed_menu_block').offset().top;
-        var scroll2 =$('.quation_test');
-        if (scroll > 500 ) {
-            $('.fixed_menu_block').css('top', 0);
-            $('.quation_test').css('top', 0);
-
-        } else if (scroll < 500) {
-            $('.fixed_menu_block').css('top', '34%');
-            $('.quation_test').css('top', '34%');
-        }
-
-    };
+ 
     $('.show_window').click(function (e) {
         $('.cover-div').toggleClass('active');
         $('.message').toggleClass('active');
