@@ -85,32 +85,12 @@ video {
   font-size: 14px;
 }
 
-@font-face {
-  font-family: 'font05078759185c986d15c17e7ee8deff43';
-  src: url("https://nomail.com.ua/files/eot/05078759185c986d15c17e7ee8deff43.eot?#iefix") format("embedded-opentype"), url("https://nomail.com.ua/files/woff/05078759185c986d15c17e7ee8deff43.woff") format("woff"), url("https://nomail.com.ua/files/woff2/05078759185c986d15c17e7ee8deff43.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: 'DINPro-Bold';
-  src: local("DINPro-Bold"), url("https://nomail.com.ua/files/woff/05078759185c986d15c17e7ee8deff43.woff") format("woff");
-}
-
 #dinprobold {
   font-family: 'DINPro-Bold';
 }
 
 .font05078759185c986d15c17e7ee8deff43 {
   font-family: 'font05078759185c986d15c17e7ee8deff43';
-}
-
-@font-face {
-  font-family: 'font48a3635ce1e76c0122a143b076f51adf';
-  src: url("https://nomail.com.ua/files/eot/48a3635ce1e76c0122a143b076f51adf.eot?#iefix") format("embedded-opentype"), url("https://nomail.com.ua/files/woff/48a3635ce1e76c0122a143b076f51adf.woff") format("woff"), url("https://nomail.com.ua/files/woff2/48a3635ce1e76c0122a143b076f51adf.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: 'DINPro-Medium';
-  src: local("DINPro-Medium"), url("https://nomail.com.ua/files/woff/48a3635ce1e76c0122a143b076f51adf.woff") format("woff");
 }
 
 conteiner {
@@ -127,16 +107,6 @@ conteiner {
 
 table {
   border-collapse: collapse;
-}
-
-@font-face {
-  font-family: 'font86fda98796bb4100ba905535a77723bd';
-  src: url("https://nomail.com.ua/files/eot/86fda98796bb4100ba905535a77723bd.eot?#iefix") format("embedded-opentype"), url("https://nomail.com.ua/files/woff/86fda98796bb4100ba905535a77723bd.woff") format("woff"), url("https://nomail.com.ua/files/woff2/86fda98796bb4100ba905535a77723bd.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: 'DINPro-Regular';
-  src: local("DINPro-Regular"), url("https://nomail.com.ua/files/woff/86fda98796bb4100ba905535a77723bd.woff") format("woff");
 }
 
 select,
