@@ -153,7 +153,7 @@ var moreUserInfo =(function () {
     }
     function saveChange(user) {
        user.name = checkData(document.querySelector("#inputEmail1"),user.name);
-       user.username = checkData(document.querySelector("#inputPassword1"),user.usermane);
+       user.username = checkData(document.querySelector("#inputPassword1"),user.username);
        user.status = checkData(document.querySelector("#inputState1"),user.status);
        user.address.city=checkData(document.querySelector("#city"),user.address.city);
        user.address.street = checkData(document.querySelector("#street"),user.address.street);
