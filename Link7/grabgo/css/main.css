@@ -1,0 +1,790 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  margin: 0;
+  padding: 0; }
+
+ul {
+  margin: 0px;
+  padding: 0px; }
+
+.content {
+  opacity: 0;
+  height: 960px;
+  position: relative; }
+
+.content.show {
+  opacity: 1;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  z-index: 675; }
+
+.logo {
+  width: 300px;
+  height: 58px;
+  position: absolute;
+  top: 30px;
+  left: 350px;
+  background: url("../img/logo.png"); }
+
+.sky_bg {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  background: url("../img/body-bg-sky (1).jpg"); }
+  .sky_bg .sun {
+    top: -12%;
+    z-index: 0;
+    left: 290px;
+    position: absolute;
+    width: 1020px;
+    height: 560px;
+    background: url("../img/horizonte-sun (1).png"); }
+
+.road_bg {
+  position: relative;
+  height: 450px;
+  width: 100%;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background: url("../img/body-bg-road (1).jpg"); }
+
+.nuve1 {
+  width: 2000px;
+  height: 350px;
+  position: absolute;
+  top: -30px;
+  background: url("../img/horizonte-nuvens-top1_day.png");
+  left: 270px; }
+
+.nuve1.night {
+  background: url("../img/horizonte-nuvens-top1_night.png"); }
+
+.nuve2 {
+  width: 2000px;
+  height: 350px;
+  position: absolute;
+  background: url("../img/horizonte-nuvens-top2-day.png");
+  top: -30px;
+  left: 1085px; }
+
+.manyChips {
+  height: 100vh;
+  width: 33vw;
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  left: 20vw; }
+
+.store {
+  background: url("../img/obj-home-store.png");
+  z-index: 3;
+  left: 0;
+  height: 760px;
+  width: 767px;
+  bottom: 184px;
+  position: absolute; }
+
+.changeDay, .ch {
+  display: block;
+  width: 45px;
+  background: url("../img/btn-dia-noite.png") 0px 0px;
+  height: 37px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  left: 707px; }
+
+.changeDay.night {
+  background: url("../img/btn-dia-noite (2).png") 0px 0px; }
+
+.ch {
+  left: 56%; }
+
+.city {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; }
+
+.city1 {
+  z-index: 2;
+  position: absolute;
+  background: url("../img/citi1_2.png");
+  width: 120%;
+  height: 100px;
+  top: 0px;
+  left: 0px; }
+
+.city2 {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  background: url("../img/horizonte-city2 (1).png");
+  width: 120%;
+  height: 100px;
+  left: 0px; }
+
+.slideBar.night span {
+  color: #ee4700; }
+
+.forest {
+  z-index: 3;
+  left: 0px;
+  -webkit-background-size: cover;
+          background-size: cover;
+  position: absolute;
+  top: 49px;
+  background: url("../img/horizonte-forest (1).png");
+  width: 120%;
+  height: 52px; }
+
+.slideBar {
+  position: absolute;
+  top: 64px;
+  left: 800px;
+  z-index: 5;
+  width: 540px;
+  height: 40px;
+  list-style: none; }
+  .slideBar .btn {
+    cursor: pointer;
+    background: url("../img/nav-btn-grabgo.png");
+    width: 76px;
+    height: 54px;
+    top: -58px;
+    left: 0px;
+    position: absolute; }
+  .slideBar .dots {
+    left: 20px;
+    display: block;
+    width: 450px;
+    height: 10px;
+    position: absolute;
+    bottom: 30px; }
+  .slideBar .dots2 {
+    background: url(../img/nav-dots.png) no-repeat 0px -10px; }
+  .slideBar .dot1 {
+    z-index: 1;
+    background: url("../img/nav-dots.png") no-repeat 0px 0px; }
+  .slideBar ul {
+    padding: 0 40px;
+    height: 40px; }
+    .slideBar ul li {
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+      position: relative;
+      cursor: pointer;
+      text-align: left;
+      display: block;
+      width: 110px;
+      height: 40px;
+      line-height: 40px;
+      color: red;
+      float: left;
+      cursor: pointer; }
+      .slideBar ul li:hover span {
+        color: white; }
+      .slideBar ul li span {
+        color: #e0d2e4;
+        position: absolute; }
+  .slideBar .li1 span {
+    left: -19px; }
+  .slideBar .li2 span {
+    left: -8px; }
+  .slideBar .li3 span {
+    left: 10px; }
+  .slideBar .li4 span {
+    left: 42px; }
+
+.chips {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 200px;
+  left: 50%; }
+
+.road_bg.night {
+  background: url("../img/body-bg-road.jpg"); }
+
+.sky_bg.night {
+  background: url("../img/body-bg-sky.jpg"); }
+
+.city1.night {
+  background: url("../img/citi1_1.png"); }
+
+.city2.night {
+  background: url("../img/horizonte-city2.png"); }
+
+.store.night {
+  background: url("../img/obj-home-store (1).png"); }
+
+.sky_bg.night .sun {
+  top: 44%;
+  left: 500px;
+  background: url(../img/horizonte-sun.png) no-repeat -205px -265px; }
+
+.c1 {
+  width: 110px;
+  height: 67px;
+  position: absolute;
+  bottom: 510px;
+  left: 490px;
+  background: url("../img/obj-home-frita7 (1).png"); }
+
+.c1.night {
+  background: url("../img/obj-home-frita7.png"); }
+
+.c2 {
+  background: url("../img/obj-home-frita8.png");
+  width: 120px;
+  height: 92px;
+  position: absolute;
+  top: -800px;
+  left: 610px; }
+
+.c2.night {
+  background: url("../img/obj-home-frita8 (1).png") no-repeat; }
+
+.c3 {
+  background: url("../img/obj-home-frita9.png");
+  width: 200px;
+  height: 120px;
+  position: absolute;
+  bottom: 539px;
+  left: 1177px; }
+
+.c3.night {
+  background: url("../img/obj-home-frita9 (1).png"); }
+
+.c4 {
+  background: url("../img/obj-home-frita4 (1).png") no-repeat;
+  width: 120px;
+  height: 92px;
+  position: absolute;
+  bottom: 0px;
+  right: -16vw; }
+
+.c4.night {
+  background: url("../img/obj-home-frita4.png") no-repeat; }
+
+.oneChips {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  z-index: 4; }
+
+.ch5, .ch1 {
+  z-index: 6; }
+
+.c5 {
+  background: url("../img/obj-home-frita6 (1).png") no-repeat;
+  width: 120px;
+  height: 92px;
+  position: absolute;
+  top: -930px;
+  right: -1510px; }
+
+.c5.night {
+  background: url("../img/obj-home-frita6.png") no-repeat; }
+
+.c6 {
+  background: url("../img/obj-home-frita3 (1).png") no-repeat;
+  width: 120px;
+  height: 92px;
+  position: absolute;
+  bottom: 35px;
+  left: 328px; }
+
+.c6.night {
+  background: url("../img/obj-home-frita3.png") no-repeat; }
+
+.c7 {
+  background: url("../img/obj-home-frita5 (1).png") no-repeat;
+  width: 120px;
+  height: 92px;
+  position: absolute;
+  bottom: -57px;
+  left: 450px; }
+
+.c10 {
+  background: url("../img/obj-home-frita10.png") no-repeat;
+  width: 476px;
+  z-index: 153;
+  height: 284px;
+  position: absolute;
+  bottom: 564px;
+  left: -38px; }
+
+.ch10 {
+  z-index: 6; }
+
+.c10.night {
+  background: url("../img/obj-home-frita10(1).png") no-repeat; }
+
+.c7.night {
+  background: url("../img/obj-home-frita5.png") no-repeat; }
+
+.c9 {
+  width: 370px;
+  height: 92px;
+  position: absolute;
+  bottom: 590px;
+  left: 795px; }
+  .c9 h2 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 0; }
+  .c9 span {
+    color: gray; }
+
+.c9.night {
+  color: #ee4700; }
+  .c9.night span {
+    color: white; }
+
+.fritasmonte {
+  width: 556px;
+  height: 322px;
+  background: url("../img/obj-home-fritasmonte.png");
+  position: absolute;
+  top: -270px;
+  left: 510px; }
+
+.fritasmonte.night {
+  background: url("../img/obj-home-fritasmonte(1).png"); }
+
+.foodDrinks {
+  position: absolute;
+  width: 1120px;
+  z-index: 4;
+  height: 150px;
+  top: -607px;
+  left: 275px;
+  background: url("../img/food-drinks-day.png"); }
+
+.foodDrinks.night {
+  background: url("../img/food-drinks-night.png"); }
+
+.infoCircle {
+  position: relative;
+  z-index: 4;
+  -webkit-border-radius: 40px;
+          border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: #ee4700;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  .infoCircle .text {
+    padding: 16px 0;
+    font-size: 6px;
+    display: none;
+    line-height: normal; }
+  .infoCircle:hover {
+    -webkit-transform: scale(2.3);
+        -ms-transform: scale(2.3);
+            transform: scale(2.3);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center; }
+    .infoCircle:hover .text {
+      display: block; }
+    .infoCircle:hover span {
+      display: none; }
+
+.infoCircle1 {
+  top: -340px;
+  left: 175px; }
+
+.infoCircle2 {
+  top: -459px;
+  left: 326px; }
+
+.Screen2_ch, .Screen3_ch, .Screen4_ch {
+  bottom: 0;
+  position: absolute;
+  z-index: 4;
+  left: 100vw; }
+
+.Screen3_ch {
+  left: 200vw; }
+
+.Screen4_ch {
+  left: 300vw; }
+
+.screen4_c1 {
+  background: url("../img/map.png");
+  width: 1058px;
+  position: absolute;
+  height: 480px;
+  z-index: 4;
+  left: 380px;
+  bottom: 240px; }
+
+.screen2_c1 {
+  width: 345px;
+  position: absolute;
+  height: 175px;
+  z-index: 4;
+  opacity: 0;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  left: 200px;
+  top: -525px; }
+  .screen2_c1.food_cebab {
+    background: url("../img/produtct-kebab.png"); }
+  .screen2_c1.food_sands {
+    background: url("../img/product-sandes.png"); }
+  .screen2_c1.food_nuts {
+    background: url("../img/product-nuts.png"); }
+  .screen2_c1.food_twix {
+    background: url("../img/product-twix.png"); }
+
+.screen3_c3 {
+  background: url("../img/obj-fran-pipocas1.png");
+  width: 440px;
+  position: absolute;
+  height: 260px;
+  z-index: 4;
+  left: 1053px;
+  bottom: 200px; }
+
+.screen3_c3.night {
+  background: url("../img/obj-fran-pipocas1(1).png"); }
+
+.screen3_c2 {
+  background: url("../img/obj-fran-pipocas2.png");
+  width: 350px;
+  position: absolute;
+  height: 215px;
+  z-index: 4;
+  left: 210px;
+  bottom: 130px; }
+
+.screen3_c2.night {
+  background: url("../img/obj-fran-pipocas2(1).png"); }
+
+.screen3_c4 {
+  background: url("../img/obj-fran-pipoca6.png");
+  width: 47px;
+  position: absolute;
+  height: 58px;
+  z-index: 4;
+  left: 210px;
+  bottom: 530px; }
+
+.screen3_c4.night {
+  background: url("../img/obj-fran-pipoca6(1).png"); }
+
+.screen3_c5 {
+  background: url("../img/obj-fran-pipoca7.png");
+  width: 99px;
+  position: absolute;
+  height: 93px;
+  z-index: 4;
+  left: 1220px;
+  bottom: 505px; }
+
+.screen3_c5.night {
+  background: url("../img/obj-fran-pipoca7(1).png"); }
+
+.screen3_c8 {
+  background: url("../img/obj-fran-pipoca1.png");
+  width: 403px;
+  position: absolute;
+  height: 357px;
+  z-index: 4;
+  left: 1430px;
+  bottom: 575px; }
+
+.screen3_c8.night {
+  background: url("../img/obj-fran-pipoca1(1).png"); }
+
+.screen3_c6 {
+  background: url("../img/obj-fran-pipoca3.png");
+  width: 80px;
+  position: absolute;
+  height: 80px;
+  z-index: 4;
+  left: 1145px;
+  bottom: 640px; }
+
+.screen3_c7 {
+  width: 745px;
+  position: absolute;
+  height: 58px;
+  z-index: 4;
+  left: 360px;
+  bottom: 640px; }
+  .screen3_c7 h1 {
+    font: normal 45px/42px "dBl", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0; }
+  .screen3_c7 p {
+    font: normal 22px/24px "dB", Helvetica, Arial, sans-serif;
+    margin: 0; }
+
+.screen3_c6.night {
+  background: url("../img/obj-fran-pipoca3(1).png"); }
+
+.screen2_c1.active {
+  opacity: 1;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+
+.screen3_c7.night h1 {
+  color: #ee4700; }
+
+.screen3_c7.night span, .screen3_c7.night p {
+  color: white; }
+
+.foods {
+  position: absolute;
+  top: -670px;
+  left: 285px;
+  width: 375px;
+  z-index: 4; }
+  .foods .text {
+    font: normal 15px/18px "dBo", Helvetica, Arial, sans-serif;
+    position: absolute;
+    right: 30px;
+    opacity: 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    width: 245px;
+    float: right;
+    color: black;
+    font-size: 18px; }
+    .foods .text.active {
+      opacity: 1;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s; }
+  .foods ul {
+    overflow: hidden;
+    list-style: none; }
+  .foods li {
+    cursor: pointer;
+    height: 50px;
+    width: 54px;
+    float: left; }
+  .foods .food1 {
+    background: url("../img/produtos-varios.gif") 0px 0px; }
+    .foods .food1:hover, .foods .food1.active {
+      background: url("../img/produtos-varios.gif") 0px 50px; }
+  .foods .food2 {
+    background: url("../img/produtos-varios.gif") 54px 0px; }
+    .foods .food2:hover, .foods .food2.active {
+      background: url("../img/produtos-varios.gif") 54px 50px; }
+  .foods .food3 {
+    background: url("../img/produtos-varios.gif") 156px 0px; }
+    .foods .food3:hover, .foods .food3.active {
+      background: url("../img/produtos-varios.gif") 156px 50px; }
+  .foods .food4 {
+    background: url("../img/produtos-varios.gif") 258px 0px; }
+    .foods .food4:hover, .foods .food4.active {
+      background: url("../img/produtos-varios.gif") 258px 50px; }
+
+.foods .text h1 {
+  font-size: 28px; }
+
+.foods.night .text, .bridias.night span, .mais.night span, .Quentes.night span {
+  color: white; }
+
+.foods.night .text h1 {
+  color: #ee4700; }
+
+.screen2_c2 {
+  background: url("../img/products-cola.png");
+  width: 680px;
+  position: absolute;
+  height: 215px;
+  z-index: 4;
+  left: -300px;
+  bottom: 0px; }
+
+.screen2_c2.night {
+  background: url("../img/obj-produtos-cola(1).png"); }
+
+.screen2_c3 {
+  background: url("../img/produt-cup .png");
+  width: 280px;
+  position: absolute;
+  height: 310px;
+  z-index: 4;
+  left: 1053px;
+  bottom: 200px; }
+
+.bridias, .Quentes, .mais {
+  text-align: left;
+  cursor: pointer;
+  width: 300px;
+  position: absolute;
+  top: -340px;
+  left: 330px;
+  z-index: 4; }
+  .bridias:hover .img, .Quentes:hover .img, .mais:hover .img {
+    background: url("../img/produtos-bebidafria.gif") 0px 0px; }
+  .bridias h1, .Quentes h1, .mais h1 {
+    margin: 0px 0px 0px 64px; }
+  .bridias .img, .Quentes .img, .mais .img {
+    float: left;
+    width: 54px;
+    height: 50px;
+    background: url("../img/produtos-bebidafria.gif") 0px 50px; }
+  .bridias span, .Quentes span, .mais span {
+    display: block;
+    margin-left: 65px;
+    max-width: 90%;
+    font-size: 20px; }
+
+.mais h1 {
+  margin: 0; }
+
+.bridias.night, .Quentes.night, .mais.night h1 {
+  color: #ee4700; }
+
+.Quentes {
+  left: 750px; }
+  .Quentes .img {
+    background: url("../img/produtos-bebidaquente.gif") 0px 50px; }
+  .Quentes:hover .img {
+    background: url("../img/produtos-bebidaquente.gif") 0px 0px; }
+
+.mais {
+  width: 370px;
+  left: 810px;
+  top: -657px; }
+  .mais span {
+    margin-left: 0px;
+    margin-right: 55px; }
+  .mais:hover .img {
+    background: url("../img/produtos-stiker.gif") 0px 0px; }
+  .mais .img {
+    height: 108px;
+    width: 67px;
+    background: url("../img/produtos-stiker.gif") 0px 108px;
+    float: right; }
+
+@media screen and (max-width: 1280px) {
+  .changeDay {
+    left: 83%; }
+  .store {
+    left: -296px;
+    bottom: 185px;
+    background: url("../img/home-small-day.png"); }
+    .store.night {
+      background: url("../img/home-small-night.png"); }
+  .c1 {
+    bottom: 668px;
+    left: 190px; }
+  .c2 {
+    top: -626px;
+    left: 311px; }
+  .c3 {
+    bottom: 697px;
+    left: 75vw; }
+  .c5 {
+    bottom: 100px;
+    left: -6px; }
+  .fritasmonte {
+    left: 230px; }
+  .nuve1 {
+    left: -63px; }
+  .c9 {
+    left: 480px; }
+  .infoCircle1 {
+    top: -398px;
+    left: 24px; }
+  .infoCircle2 {
+    top: -413px;
+    left: 176px; }
+  .slideBar {
+    left: 430px; }
+  .logo {
+    left: 100px; } }
+
+.downloadMobile {
+  display: none; }
+
+@media screen and (max-width: 1100px) {
+  .content {
+    display: none; }
+  .downloadMobile {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: url("../img/loading-bg.jpg");
+    text-align: center; }
+  .message {
+    display: block;
+    width: 200px;
+    position: absolute;
+    height: 50px;
+    left: 4%;
+    top: 55%;
+    color: white;
+    font-size: 35px; } }
+
+.preloader {
+  background: url("../img/loading-bg.jpg");
+  width: 100vw;
+  opacity: 1;
+  height: 100vh;
+  z-index: 5;
+  position: absolute; }
+
+.preLogo {
+  width: 460px;
+  height: 160px;
+  background: url("../img/loading-id.png");
+  position: absolute;
+  top: 46%;
+  left: 235px; }
+
+.lineAll {
+  width: 200px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  left: 400px;
+  top: 670px;
+  overflow: hidden; }
+  .lineAll .lineRed {
+    width: 200px;
+    height: 20px;
+    background-color: #ee4700;
+    position: absolute;
+    left: -99%;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-name: mymove;
+            animation-name: mymove; }
+
+@-webkit-keyframes mymove {
+  0% {
+    left: -99%; }
+  100% {
+    left: 0%; } }
+
+@keyframes mymove {
+  0% {
+    left: -99%; }
+  100% {
+    left: 0%; } }

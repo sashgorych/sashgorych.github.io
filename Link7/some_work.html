@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+<div class="work1">
+    <p class="main_work1">Ich packe mein Auto</p>
+    <div class="work1_left_side">
+    <div class="work1_left">
+    <p>Change object</p>
+    </div>
+    <div class="work1_top">
+        <div class="choose_icon choose_icon1">1</div>
+        <div class="choose_icon choose_icon2">2</div>
+        <div class="choose_icon choose_icon3">3</div>
+        <div class="choose_icon choose_icon4">4</div>
+        <div class="choose_icon choose_icon5">5</div>
+    </div>
+    <div class="work1_bottom">
+        <p class="work1_p_bottom">You have chosen</p>
+    </div>
+    </div>
+    <div class="work1_right_side">
+        <div class="right_inside">
+        <div class="person_block">
+            <div class="person"></div>
+        </div>
+            <div class="buttons">
+        <a href="#" class="add_person">+</a>
+        <a href="#" class="remove_person">-</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="work2">
+    <ul>
+        <li>
+            <div class="work2_slide">
+                <div class="span div1 span1">
+                    <div class=" span div2 span2">
+                        <div class="span div3 span3">
+                            <div class=" span div4 span4">
+                                <div class=" span div5 span5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="work2_slide">
+                <div class="span div1 span1">
+                    <div class=" span div2 span2">
+                        <div class="span div3 span3">
+                            <div class=" span div4 span4">
+                                <div class=" span div5 span5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="work2_slide">
+                <div class="span div1 span1">
+                    <div class=" span div2 span2">
+                        <div class="span div3 span3">
+                            <div class=" span div4 span4">
+                                <div class=" span div5 span5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+    <div class=" work3">
+<ul>
+    <li>
+        <div class="work2_iron">
+            <div class="iron_text">
+                <h1>Iron Man 2</h1>
+                <p>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</p>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="work2_iron">
+            <div class="iron_text">
+                <h1>Iron Man 2</h1>
+                <p>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</p>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="work2_iron">
+            <div class="iron_text">
+                <h1>Iron Man 2</h1>
+                <p>With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony...</p>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </li>
+</ul>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--<script src="js/slick.js"></script>-->
+<!--<script src="js/wow.min.js"></script>-->
+<!--<script src="js/common.js"></script>-->
+<script>
+$(".choose_icon").click(function () {
+    $(this).toggleClass("active");
+    var no_active_icon= $('.work1_top').children(".choose_icon:not(.active)").length;
+    var active_icon= $('.work1_top').children(".active").length;
+    var position_left_active=(active_icon-1)*40;
+    var position_left_no_active=no_active_icon*40;
+    if($(this).hasClass("active")){
+        $(this).css("top",337+"px");
+        $(this).css("left",position_left_active+"px");
+    }else{
+        $(this).css("top",25+"px");
+        $(this).css("left",position_left_no_active+"px");
+    }
+    var nnn=$('.work1_top').children(".choose_icon:not(.active)");
+    for(var i=0;i<nnn.length;i++){
+        nnn[i].style.left=40*i+"px";
+    }
+})
+$(".add_person").click(function (e) {
+    e.preventDefault();
+    if($(".person").length<7) {
+        $('.person:first').clone().appendTo(".person_block");
+    }
+    });
+$(".remove_person").click(function (e) {
+    e.preventDefault();
+    if($(".person").length!=1) {
+        $('.person:last').remove();
+    }
+
+});
+</script>
+</body>
+</html>

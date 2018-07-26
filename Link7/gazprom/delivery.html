@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="manifest" href="./img/favicon/manifest.json">
+    <title> Gazprom</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/datepicker.min.js"></script>
+
+</head>
+
+<body>
+<div class="header">
+</div>
+<div class="history">
+    <span>
+        <a href="index.html">
+            <img src="./img/home-img.png" alt="">
+        </a>
+    </span>
+    <span>
+        <a href="index.html">Личный кабинет</a>
+    </span>
+    <span>
+        <a href="#"></a>
+    </span>
+</div>
+<div class="conteiner">
+    <div class="delivery_bg">
+    <div class="navigation_block"></div>
+    <div class="delivery">
+        <h1 class="main_text">Заявка на доставку <span>(Информация по доставке транспортом Исполнителя)</span></h1>
+        <div class="line"></div>
+        <div class="table_s">
+            <span>Выберите отделение</span>
+            <select name="" id="">
+                <option value="" selected disabled>Выберите отделение</option>
+                <option value="">Российская Федерация, г. Тюмень</option>
+            </select>
+            <br>
+            <span>Договор доставки</span>
+            <select name="" id="">
+                <option value="" selected disabled> Договор доставки</option>
+                <option value="">№ 01204104196 от 10.07.2013</option>
+            </select>
+            <br>
+            <div class="calendar">
+                 <span >Желаемая дата доставки</span>
+                 <input type="text" id="calendar" class="datepicker-here" placeholder="Желательная дата прибытия">
+                <label for="calendar">
+                <img src="./img/ico-calendar.png" alt="" >
+                </label>
+            </div>
+            <span>Маршрут</span>
+            <select name="" id="">
+                <option value="" selected disabled> Маршрут</option>
+                <option value="">Нефтебаза Лотус-Групп - Акционерное Общество «Газпромн</option>
+            </select>
+            <br>
+            <span>Адрес доставки </span>
+            <select name="" id="">
+                <option value="" selected disabled> Адрес доставки</option>
+                <option value="">Ингушетия Респ, Назрановский р-н, Долаково с/п, Гайрбек</option>
+            </select>
+            <br>
+            <span>Базис отгрузки	 </span>
+            <select name="" id="">
+                <option value="" selected disabled> Базис отгрузки</option>
+
+                <option value="">Нефтебаза Лотус-Групп</option>
+            </select>
+            <br>
+            <span>Заявленное расстояние</span>
+            <input type="text" placeholder="Заявленное расстояние">
+
+        </div>
+        <div class="add_prod">
+            <div class="add_prod_header">
+            <span>Вид нефтепродукта:</span>
+            <span>Количество, тонн:</span>
+            </div>
+            <div class="add_prod_inp_all">
+            <div class="add_prod_inp">
+                <select name="" id="">
+                    <option value="" selected disabled>Вид нефтепродукта </option>
+                    <option value="">Российская Федерация, г. Тюмень</option>
+                </select>
+                <input type="text" placeholder="Количество">
+                <button class="button_delete add2">Добавить</button>
+                <p class="delete2">X</p>
+                <br>
+            </div>
+                <div class="add_prod_inp2"></div>
+            </div>
+        </div>
+        <div class="delivery_person">
+            <span>Контактное лицо, ответственное за
+                  приём Продукции (по адресу доставки) </span>
+            <select name="" id="">
+                <option value="" selected disabled>Контактное лицо </option>
+            </select>
+            <span class="or">or</span>
+            <input type="text">
+        </div>
+        <div class="phone">
+            <span>Контактный телефон</span>
+            <input type="text" placeholder="Контактный телефон">
+        </div>
+        <div class="conditions">
+            <span>Дополнительные условия</span>
+            <input type="text" placeholder="Дополнительные условия" >
+
+        </div>
+        <div class="consuption_footer">
+            <button class="button_delete">Отправить</button>
+            <div class="block_a_a">
+                <a href="#">Печатная форма заявки</a>
+                <a href="#">К списку</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="delivery_bottom">
+    <div class=" arrears_block"></div>
+    <div class="popular_block "></div>
+    </div>
+
+</div>
+<div class="footer_bg"></div>
+
+<script>
+    $('.header').load('https://sashgorych.github.io/Link2/components/header.html');
+    $('.navigation_block').load('https://sashgorych.github.io/Link2/components/navigation.html');
+    $('.popular_block').load('https://sashgorych.github.io/Link2/components/popular.html');
+    $('.arrears_block').load('https://sashgorych.github.io/Link2/components/arrears.html');
+    $('.footer_bg').load('https://sashgorych.github.io/Link2/components/footer.html');
+
+    $('body').on('click', '.add2', function(){
+//        $('.add_prod_inp').first().clone(true).appendTo('.add_prod_inp_all');
+        $(this).parent().clone(true).appendTo('.add_prod_inp_all');
+    }) ;
+
+    $('body').on('click', '.delete2', function(){
+        $(this).closest('.add_prod_inp').remove()
+    })
+
+</script>
+
+</body>
+</html>
