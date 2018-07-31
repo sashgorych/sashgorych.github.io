@@ -60,7 +60,26 @@ table {
   background-size: cover;
   height: 100vh;
 }
+.cv{
+  color: black;
+  cursor: pointer;
+  i{
+    font-size: 60px;
+  }
+  span{
+    position: absolute;
+    top: -31px;
+    left: 4px;
+    text-decoration: none;
+    color: white;
 
+  }
+  width: 34px;
+  height: 48px;
+  position: relative;
+  margin-left: -17px;
+  top: 54px;
+}
 .tt {
   padding: 0 30px;
   margin: auto;
