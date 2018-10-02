@@ -109,7 +109,7 @@ let dictionary = {
     "dynamic":"інтерактивність",
     "websites don't have to be static, i love making pages come to life.":"створюю живі сайти",
     "who's this guy?":"хто я?",
-    "i am a front-end developer from chernivtsi (ukraine). i am engaged in web development for about 2 years. I study at the Chernivtsi National University on the chair of software engineering":"я front-end розробник з чернівців(україна). займаюся веб розробкою близько 2 років. навчаюся в чернівецькому національному університеті на кафедрі програмної інженерії",
+    "i am a front-end developer from chernivtsi (ukraine). i am engaged in web development for about 2 years. i am studying at the chernivtsi national university on the chair of software engineering":"я front-end розробник з чернівців(україна). займаюся веб розробкою близько 2 років. навчаюся в чернівецькому національному університеті на кафедрі програмної інженерії",
     "pure js":"чистий js",
     "landing page":"сайт-візитка",
     "css html animation":"css html анімація",
