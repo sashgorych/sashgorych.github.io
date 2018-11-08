@@ -1349,7 +1349,8 @@ table {
 
 .projectsExample5 {
   background: url("../img/avto.png"); }
-
+.projectsExample6{
+  background: url("../img/phones.png"); }
 .projectsExampleContent {
   position: absolute;
   display: block;
