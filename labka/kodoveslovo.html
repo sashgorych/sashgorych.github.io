@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>КОДОВЕ СЛОВО</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+Повідомлення:
+<br /><input type='text' id='message'>
+<br /><br />
+кодова фраза<input type='text' id='phrase'>
+<br /><br />
+зсув<input type='text' id='shift'>
+<br /><br />
+<button onclick='encrypt()'>Зашифрувати</button>
+<br /><br />
+<button onclick='decrypt()'>Розшифрувати</button>
+<br /><br />
+Зашифроване повідомлення: <br />
+<input type='text' id='cipher'>
+
+<script>
+    var alphabet = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ';
+    function find_unique_characters( string ){
+        var unique='';
+        for(var i=0; i<string.length; i++){
+            if(unique.indexOf(string[i])==-1){
+                unique += string[i];
+            }
+        }
+        return unique;
+    }
+    function shiftAlphabet(word,shift) {
+        let shiftedAlphabet2="";
+        word = word.split(' ').join("");
+        word= find_unique_characters(word)
+        console.log(word)
+        var shiftedAlphabet = alphabet; //новий алфавіт
+        for (let i = 0; i < word.length; i++) {
+            shiftedAlphabet = shiftedAlphabet.replace(word[i],""); //Поточна буква з зсувом, якщо виходимо за рамки довжини алфавіту - берем з початку алфавіту
+        }
+        shiftedAlphabet = word + shiftedAlphabet;
+
+        for (var i = 0; i < shiftedAlphabet.length; i++) {
+            let currentLetter = (shiftedAlphabet[i + shift] === undefined) ? (shiftedAlphabet[i + shift - shiftedAlphabet.length]) : (shiftedAlphabet[i + shift        ]); //Поточна буква з зсувом, якщо виходимо за рамки довжини алфавіту - берем з початку алфавіту
+
+            shiftedAlphabet2 = shiftedAlphabet2.concat(currentLetter);
+        }
+        return shiftedAlphabet2;
+    }
+
+
+    function encrypt() {
+        var message = document.getElementById('message').value.toUpperCase();
+        var phrase = document.getElementById('phrase').value.toUpperCase();
+
+        var shift = parseInt(document.getElementById('shift').value);
+
+        var shiftedAlphabet= shiftAlphabet(phrase,shift);
+        var encryptedMessage = '';
+        for (var i = 0; i < message.length; i++) {
+            var indexOfLetter = alphabet.indexOf(message[i].toUpperCase());
+            encryptedMessage = encryptedMessage.concat(shiftedAlphabet[indexOfLetter]);
+        }
+        document.getElementById('cipher').value = encryptedMessage.toLowerCase();
+    }
+
+    function decrypt() {
+        var message = document.getElementById('cipher').value.toUpperCase();
+        var phrase = document.getElementById('phrase').value.toUpperCase();
+        var shift = parseInt(document.getElementById('shift').value);
+        var shiftedAlphabet = shiftAlphabet(phrase,shift);
+        var encryptedMessage = '';
+        for (var i = 0; i < message.length; i++) {
+            if (message[i] == ' ') {
+                encryptedMessage = encryptedMessage.concat(' ');
+                continue};
+            var indexOfLetter = shiftedAlphabet.indexOf(message[i].toUpperCase());
+            encryptedMessage = encryptedMessage.concat(alphabet[indexOfLetter]);
+        }
+        document.getElementById('cipher').value = encryptedMessage.toLowerCase();
+    }
+</script>
+</body>
+</html>

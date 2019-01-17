@@ -1677,16 +1677,16 @@ table {
   content: "80%"; }
 
 .aboutRightSection4 .aboutRightSectionRightProgres {
-  width: 60%; }
+  width: 37%; }
 
 .aboutRightSection4 .aboutRightSectionRight:after {
-  content: "70%"; }
+  content: "40%"; }
 
 .aboutRightSection5 .aboutRightSectionRightProgres {
-  width: 30%; }
+  width: 27%; }
 
 .aboutRightSection5 .aboutRightSectionRight:after {
-  content: "40%"; }
+  content: "20%"; }
 
 .aboutRightSection6 .aboutRightSectionRightProgres {
   width: 80%; }

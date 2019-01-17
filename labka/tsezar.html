@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шифр Цезаря</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+Повідомлення:
+<br /><input type='text' id='message'>
+<br /><br />
+Зсув (число):<input type='text' id='shift' value='3'>
+<br /><br />
+<button onclick='encrypt()'>Зашифрувати</button>
+<br /><br />
+<button onclick='decrypt()'>Розшифрувати</button>
+<br /><br />
+Зашифроване повідомлення: <br />
+<input type='text' id='cipher'>
+
+<script>
+    var alphabet = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ';
+    function shiftAlphabet(shift) {
+        var shiftedAlphabet = ''; //новий алфавіт
+        for (var i = 0; i < alphabet.length; i++) {
+            currentLetter = (alphabet[i + shift] === undefined) ? (alphabet[i + shift - alphabet.length]) : (alphabet[i + shift        ]); //Поточна буква з зсувом, якщо виходимо за рамки довжини алфавіту - берем з початку алфавіту
+
+            shiftedAlphabet = shiftedAlphabet.concat(currentLetter);
+        }
+        return shiftedAlphabet;
+    }
+
+
+    function encrypt() {
+        var message = document.getElementById('message').value;
+        var shift = parseInt(document.getElementById('shift').value);
+        var shiftedAlphabet = shiftAlphabet(shift);
+        var encryptedMessage = '';
+        for (var i = 0; i < message.length; i++) {
+            var indexOfLetter = alphabet.indexOf(message[i].toUpperCase());
+            encryptedMessage = encryptedMessage.concat(shiftedAlphabet[indexOfLetter]);
+        }
+        document.getElementById('cipher').value = encryptedMessage.toLowerCase();
+    }
+
+    function decrypt() {
+        var message = document.getElementById('cipher').value;
+        var shift = parseInt(document.getElementById('shift').value);
+        var shiftedAlphabet = shiftAlphabet(shift);
+        var encryptedMessage = '';
+        for (var i = 0; i < message.length; i++) {
+            if (message[i] == ' ') {
+                encryptedMessage = encryptedMessage.concat(' ');
+                continue};
+            var indexOfLetter = shiftedAlphabet.indexOf(message[i].toUpperCase());
+            encryptedMessage = encryptedMessage.concat(alphabet[indexOfLetter]);
+        }
+        document.getElementById('cipher').value = encryptedMessage.toLowerCase();
+    }
+</script>
+</body>
+</html>
