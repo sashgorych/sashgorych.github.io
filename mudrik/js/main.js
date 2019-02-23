@@ -1,11 +1,13 @@
 //smoose scroll to block news in all pages
 $(document).ready(function(){
-    $(".menu-comment-block").on("click", function (event) {
-        event.preventDefault();
-        var id  ='#news',
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1500);
-    });
+        $(".menu-comment-block").on("click", function (event) {
+            if(screen.width<1181) {
+                event.preventDefault();
+                var id = '#news',
+                    top = $(id).offset().top;
+                $('body,html').animate({scrollTop: top}, 1500);
+            }
+        });
 });
 
 //animate scroll to comments of news
@@ -25,7 +27,7 @@ $(window).resize(function () {
     }else{
         $('.search-input').attr('placeholder', 'Пошук');
     }
-});
+    });
 window.onload = function () {
     if(screen.width<521) {
         $('.search-input').attr('placeholder', '');
