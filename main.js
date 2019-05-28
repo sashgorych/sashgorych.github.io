@@ -13735,7 +13735,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    serverSrc: 'http://localhost:8080'
+    serverSrc: 'https://kursova1403.herokuapp.com'
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
