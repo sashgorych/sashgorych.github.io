@@ -2545,6 +2545,10 @@ var FacultyComponent = /** @class */ (function () {
     };
     FacultyComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     FacultyComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -7503,6 +7507,10 @@ var SessionComponent = /** @class */ (function () {
     };
     SessionComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     SessionComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -7843,6 +7851,10 @@ var SpecialityTeachersComponent = /** @class */ (function () {
     };
     SpecialityTeachersComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     SpecialityTeachersComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -8450,6 +8462,10 @@ var StudingPlanComponent = /** @class */ (function () {
     };
     StudingPlanComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     StudingPlanComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -8790,6 +8806,10 @@ var SubjectComponent = /** @class */ (function () {
     };
     SubjectComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     SubjectComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -9620,7 +9640,10 @@ var TeacherComponent = /** @class */ (function () {
     };
     TeacherComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
-        this.updateInfo();
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     TeacherComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -9988,6 +10011,10 @@ var UniverDateComponent = /** @class */ (function () {
     };
     UniverDateComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     UniverDateComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -10328,6 +10355,10 @@ var ControlFormComponent = /** @class */ (function () {
     };
     ControlFormComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     ControlFormComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -10693,6 +10724,10 @@ var DecanatComponent = /** @class */ (function () {
     };
     DecanatComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     DecanatComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -11169,6 +11204,10 @@ var GroupsComponent = /** @class */ (function () {
     };
     GroupsComponent.prototype.delete = function (info) {
         this.provider.deleteData(info.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     GroupsComponent.prototype.goToEdit = function (info) {
         this._router.navigate([this.routes.edit + '/', info.id]);
@@ -13155,7 +13194,9 @@ var SubjectService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]])
     ], SubjectService);
     return SubjectService;
 }());
@@ -14087,6 +14128,10 @@ var StudentListComponent = /** @class */ (function () {
     };
     StudentListComponent.prototype.delete = function (student) {
         this._studentService.deleteStudent(student.id);
+        var h = this;
+        setTimeout(function () {
+            h.updateInfo();
+        }, 40);
     };
     StudentListComponent.prototype.goEdit = function (student) {
         this._router.navigate(['/students/edit/', student.id]);
