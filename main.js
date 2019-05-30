@@ -10939,7 +10939,7 @@ var GroupsCreateComponent = /** @class */ (function () {
         }, function (err) { return console.log(err); });
     };
     GroupsCreateComponent.prototype.userSelectKafedra = function (data) {
-        this.kafedra.setValue(data.name);
+        this.kafedra.setValue(data.id);
     };
     Object.defineProperty(GroupsCreateComponent.prototype, "id", {
         get: function () {
@@ -11106,7 +11106,7 @@ var GroupsEditComponent = /** @class */ (function () {
         }, function (err) { return console.log(err); });
     };
     GroupsEditComponent.prototype.userSelectKafedra = function (data) {
-        this.kafedra.setValue(data.name);
+        this.kafedra.setValue(data.id);
     };
     GroupsEditComponent.prototype.getOne = function (idS) {
         var _this = this;
