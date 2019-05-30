@@ -98,6 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_kategory_teacher_kategory_teacher_create_kategory_teacher_create_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./components/kategory-teacher/kategory-teacher-create/kategory-teacher-create.component */ "./src/app/components/kategory-teacher/kategory-teacher-create/kategory-teacher-create.component.ts");
 /* harmony import */ var _components_teacher_teacher_search_teacher_search_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./components/teacher/teacher-search/teacher-search.component */ "./src/app/components/teacher/teacher-search/teacher-search.component.ts");
 /* harmony import */ var _candidate_work_candidate_work_edit_candidate_work_edit_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./candidate-work/candidate-work-edit/candidate-work-edit.component */ "./src/app/candidate-work/candidate-work-edit/candidate-work-edit.component.ts");
+/* harmony import */ var _components_title_title_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./components/title/title.component */ "./src/app/components/title/title.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -169,11 +170,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     {
         path: '',
-        redirectTo: '/students',
-        pathMatch: 'full'
+        component: _components_title_title_component__WEBPACK_IMPORTED_MODULE_65__["TitleComponent"]
+    },
+    {
+        path: 'about',
+        component: _components_title_title_component__WEBPACK_IMPORTED_MODULE_65__["TitleComponent"]
     },
     {
         path: 'students',
@@ -470,7 +475,7 @@ module.exports = "<div class=\"main\">\r\n<div class=\"\" id=\"navbarSupportedCo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  max-width: 850px; }\n\n#navbarSupportedContent {\n  width: 260px;\n  min-height: 640px;\n  background-color: #2b758c;\n  float: left; }\n\n#navbarSupportedContent {\n  padding: 10px 30px;\n  box-sizing: border-box; }\n\n#navbarSupportedContent li a {\n  color: white;\n  width: 100%;\n  color: white;\n  padding: 10px 0px;\n  display: block; }\n\n#navbarSupportedContent li a:hover {\n    color: #cccccc; }\n\n.main {\n  background-color: #edeef0;\n  max-width: 1920px;\n  margin: auto;\n  min-height: 640px; }\n\n.container-for-list {\n  max-width: 1670px;\n  box-sizing: border-box;\n  padding: 10px;\n  margin-left: 260px; }\n"
+module.exports = ".container {\n  max-width: 850px; }\n\n#navbarSupportedContent {\n  width: 260px;\n  min-height: 1070px;\n  background-color: #2b758c;\n  float: left; }\n\n#navbarSupportedContent {\n  padding: 10px 30px;\n  box-sizing: border-box; }\n\n#navbarSupportedContent li a {\n  color: white;\n  width: 100%;\n  color: white;\n  padding: 10px 0px;\n  display: block; }\n\n#navbarSupportedContent li a:hover {\n    color: #cccccc; }\n\n.main {\n  background-color: #edeef0;\n  max-width: 1920px;\n  margin: auto;\n  min-height: 640px; }\n\n.container-for-list {\n  max-width: 1670px;\n  box-sizing: border-box;\n  padding: 10px;\n  margin-left: 260px; }\n"
 
 /***/ }),
 
@@ -567,6 +572,10 @@ var AppComponent = /** @class */ (function () {
             {
                 'name': 'Запити',
                 'link': '/query'
+            },
+            {
+                'name': 'Про проект',
+                'link': '/about'
             },
         ];
     }
@@ -666,12 +675,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _querry_querry_template_teachers_teachers_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ./querry/querry-template/teachers/teachers.component */ "./src/app/querry/querry-template/teachers/teachers.component.ts");
 /* harmony import */ var _components_teacher_teacher_search_teacher_search_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./components/teacher/teacher-search/teacher-search.component */ "./src/app/components/teacher/teacher-search/teacher-search.component.ts");
 /* harmony import */ var _components_query_query_module__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! ./components/query/query.module */ "./src/app/components/query/query.module.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _components_title_title_component__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! ./components/title/title.component */ "./src/app/components/title/title.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -816,6 +829,8 @@ var AppModule = /** @class */ (function () {
                 _components_modal_window_modal_window_component__WEBPACK_IMPORTED_MODULE_68__["ModalWindowComponent"],
                 _querry_querry_template_teachers_teachers_component__WEBPACK_IMPORTED_MODULE_69__["TeachersComponent"],
                 _components_teacher_teacher_search_teacher_search_component__WEBPACK_IMPORTED_MODULE_70__["TeacherSearchComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_72__["LoginComponent"],
+                _components_title_title_component__WEBPACK_IMPORTED_MODULE_73__["TitleComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -9682,6 +9697,69 @@ var TeacherComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/title/title.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/components/title/title.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"kursova\">\r\n  <div class=\"title1\">\r\n    <p>Міністерство освіти і науки України</p>\r\n    <p>Чернівецький національний університет імені Юрія Федьковича</p>\r\n  </div>\r\n  <div class=\"title2\">\r\n    <span>Програмного забезпечення комп’ютерних систем</span>\r\n  </div>\r\n  <div class=\"title3\">\r\n    <h5>КУРСОВИЙ ПРОЕКТ</h5>\r\n    <span>з Об’єктно-орієнтованого програмування</span>\r\n  </div>\r\n  <div class=\"title4\">\r\n    <span class=\"title4_1\">на тему:</span>\r\n    <span class=\"title4_2\">Створення інформаційно- <br> довідкової системи засобами мови С++</span>\r\n  </div>\r\n  <div class=\"title5\">\r\n    <p>Виконав: студент (ка) <span class=\"underline\">  2 </span> курсу, групи <span class=\"underline\"> 243 </span></p>\r\n    <p class=\"marg-bottom\">спеціальності <span class=\" bef brf2\">  6.121 </span> </p>\r\n    <p class=\"marg-bottom\"><span class=\"kafedra bef\">Інженерія програмного забезпечення</span> </p>\r\n    <div class=\"line1\">\r\n      <div class=\"line1_left\">\r\n        <span></span>\r\n      </div>\r\n      <div class=\"line1_right\">\r\n        <span>ffffffffff</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"line1\">\r\n      <div class=\"line2_left\">\r\n        <span>Керівник</span>\r\n      </div>\r\n      <div class=\"line1_right\">\r\n        <span class=\"\">ddddd</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"line1\">\r\n      <div class=\"line2_left\">\r\n        <span>Нормоконтролер</span>\r\n      </div>\r\n      <div class=\"line2_right\">\r\n        <span>dddddddd</span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"group\">\r\n    <div class=\"title6\">\r\n      <div class=\"line1-t\">\r\n        <span>До захисту допущено:</span>\r\n      </div>\r\n      <div class=\"line2-t\">\r\n        <span class=\"line2-t1\">Від «</span>\r\n        <span class=\"line2-t2\">3033</span>\r\n        <span class=\"line2-t3\">» </span>\r\n        <span class=\"line2-t4\">555555</span>\r\n        <span class=\"line2-t5\"> 20</span>\r\n        <span class=\"line2-t6\">20</span>\r\n        <span class=\"line2-t7\">p.</span>\r\n      </div>\r\n      <div class=\"line3-t\">\r\n        <span>Керівник</span>\r\n        <span class=\"line3-t1\">хаааа</span>\r\n      </div>\r\n      <div class=\"line3-t\">\r\n        <span>Нормоконтролер</span>\r\n        <span class=\"line3-t1\">хаааа</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"title7\">\r\n      <div class=\"line2-t\">\r\n        <span class=\"line2-t1\">Дата захисту «</span>\r\n        <span class=\"line2-t2\">3033</span>\r\n        <span class=\"line2-t3\">» </span>\r\n        <span class=\"line2-t4\">555555</span>\r\n        <span class=\"line2-t5\"> 20</span>\r\n        <span class=\"line2-t6\">20</span>\r\n        <span class=\"line2-t7\">p.</span>\r\n      </div>\r\n      <div class=\"line3-t\">\r\n            <span><span class=\"bold\">Оцінка:</span>   <br> за національною шкалою\r\n</span>\r\n        <span class=\"line3-t1\">хаааа</span>\r\n      </div>\r\n      <div class=\"line3-t\">\r\n        <span>Кількість балів</span>\r\n        <span class=\"line3-t1-t2\">12</span>\r\n      </div>\r\n      <div class=\"line3-t\">\r\n        <span>за шкалою ECTS</span>\r\n        <span class=\"line3-t1-t3\">12</span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"title8\">\r\n    <span>Чернівці – 20</span>\r\n    <span class=\"title8-t1\">19</span>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/title/title.component.scss":
+/*!*******************************************************!*\
+  !*** ./src/app/components/title/title.component.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "@charset \"UTF-8\";\n.kursova {\n  width: 730px;\n  margin: auto; }\n.kursova p {\n  margin-bottom: 10px; }\n.kursova .title1 {\n  margin-bottom: 40px;\n  text-align: center; }\n.kursova .title2 {\n  margin-bottom: 100px;\n  text-align: center; }\n.kursova .title2 span {\n  text-decoration: underline;\n  font-size: 14px;\n  position: relative; }\n.kursova .title2 span:before {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 70px;\n  content: '(повна назва кафедри, циклової комісії)'; }\n.kursova .title3 {\n  margin-bottom: 25px;\n  text-align: center; }\n.kursova .title3 h5 {\n  margin-bottom: 25px;\n  font-size: 18px; }\n.kursova .title3 span {\n  text-decoration: underline;\n  font-size: 14px;\n  position: relative; }\n.kursova .title3 span:before {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 70px;\n  content: '(назва дисципліни)'; }\n.kursova .title4 {\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  margin: auto;\n  margin-bottom: 60px;\n  height: auto; }\n.kursova .title4_2 {\n  text-decoration: underline; }\n.kursova .title5 {\n  margin-bottom: 100px;\n  height: auto;\n  float: right;\n  width: 265px; }\n.kursova .title5 p {\n  height: 14px; }\n.kursova .title5 .marg-bottom {\n  margin-bottom: 20px; }\n.kursova .title5 .underline {\n  text-decoration: underline; }\n.kursova .title5 .brf2:before {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 35px;\n  content: '(шифр спеціальності)'; }\n.kursova .title5 .bef {\n  display: block;\n  float: right;\n  text-align: center;\n  width: 66%;\n  position: relative; }\n.kursova .title5 .bef:after {\n  content: \"\";\n  position: absolute;\n  display: block;\n  height: 1px;\n  background-color: black;\n  width: 100%;\n  bottom: 0;\n  left: 0; }\n.kursova .kafedra {\n  width: 100% !important;\n  position: relative; }\n.kursova .kafedra:before {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 70px;\n  content: '(назва спеціальності)'; }\n.kursova .line1 {\n  height: 50px;\n  overflow: hidden; }\n.kursova .line1_left {\n  height: 14px;\n  position: relative;\n  float: left;\n  width: 100px; }\n.kursova .line1_left span {\n  display: block;\n  position: relative; }\n.kursova .line1_left span:before {\n  font-size: 10px;\n  position: absolute;\n  top: 23px;\n  left: 30px;\n  content: '(підпис)'; }\n.kursova .line1_left span:after {\n  content: \"\";\n  position: absolute;\n  display: block;\n  height: 1px;\n  background-color: black;\n  width: 100px;\n  bottom: -21px;\n  left: 0; }\n.kursova .line1_right {\n  height: 14px;\n  position: relative;\n  float: left;\n  width: 135px;\n  margin-left: 30px; }\n.kursova .line1_right span {\n  text-align: center;\n  display: block;\n  position: relative; }\n.kursova .line1_right span:before {\n  font-size: 10px;\n  position: absolute;\n  top: 23px;\n  left: 30px;\n  content: '(Прізвище ім*я)'; }\n.kursova .line1_right span:after {\n  content: \"\";\n  position: absolute;\n  display: block;\n  height: 1px;\n  background-color: black;\n  width: 100%;\n  bottom: -4px;\n  left: 0; }\n.kursova .line2_left {\n  line-height: 17px;\n  height: 14px;\n  position: relative;\n  float: left;\n  width: 100px; }\n.kursova .line2_right {\n  height: 14px;\n  position: relative;\n  float: left;\n  width: 135px;\n  margin-left: 30px; }\n.kursova .line2_right span {\n  text-align: center;\n  display: block;\n  position: relative; }\n.kursova .line2_right span:before {\n  font-size: 10px;\n  position: absolute;\n  top: 23px;\n  left: 30px;\n  content: '(Прізвище ім*я)'; }\n.kursova .line2_right span:after {\n  content: \"\";\n  position: absolute;\n  display: block;\n  height: 1px;\n  background-color: black;\n  width: 100%;\n  bottom: -4px;\n  left: 0; }\n.kursova .underlin {\n  border-bottom: 1px solid black; }\n.kursova .title6 {\n  float: left;\n  width: 290px; }\n.kursova .title6 .line1-t {\n  margin-bottom: 10px;\n  height: 14px;\n  font-size: 12px;\n  font-weight: bold; }\n.kursova .title6 .line2-t {\n  height: 14px;\n  margin-bottom: 5px; }\n.kursova .title6 .line2-t span {\n  height: 12px;\n  font-size: 12px;\n  display: block;\n  float: left; }\n.kursova .title6 .line2-t .line2-t2, .kursova .title6 .line2-t .line2-t4, .kursova .title6 .line2-t .line2-t6 {\n  text-align: center;\n  width: 90px;\n  height: 12px;\n  border-bottom: 1px solid black; }\n.kursova .title6 .line2-t .line2-t4 {\n  width: 120px; }\n.kursova .title6 .line2-t .line2-t6 {\n  width: 20px; }\n.kursova .title6 .line3-t {\n  margin-bottom: 30px; }\n.kursova .title6 .line3-t .line3-t1 {\n  float: right;\n  display: block;\n  height: 14px;\n  position: relative;\n  width: 100px;\n  text-align: center;\n  border-bottom: 1px solid black; }\n.kursova .title6 .line3-t .line3-t1:after {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 35px;\n  content: \"(підпис)\"; }\n.kursova .title7 {\n  float: left;\n  margin-left: 80px;\n  width: 360px; }\n.kursova .title7 .bold {\n  font-weight: bold; }\n.kursova .title7 .line2-t {\n  height: 14px;\n  margin-bottom: 5px; }\n.kursova .title7 .line2-t span {\n  height: 12px;\n  font-size: 12px;\n  display: block;\n  float: left; }\n.kursova .title7 .line2-t .line2-t1 {\n  font-weight: bold; }\n.kursova .title7 .line2-t .line2-t2, .kursova .title7 .line2-t .line2-t4, .kursova .title7 .line2-t .line2-t6 {\n  text-align: center;\n  width: 80px;\n  height: 12px;\n  border-bottom: 1px solid black; }\n.kursova .title7 .line2-t .line2-t4 {\n  width: 140px; }\n.kursova .title7 .line2-t .line2-t6 {\n  width: 20px; }\n.kursova .title7 .line3-t {\n  margin-bottom: 30px; }\n.kursova .title7 .line3-t .line3-t1 {\n  float: right;\n  display: block;\n  height: 14px;\n  position: relative;\n  width: 100px;\n  text-align: center;\n  border-bottom: 1px solid black; }\n.kursova .title7 .line3-t .line3-t1:after {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 35px;\n  content: \"(словами)\"; }\n.kursova .title7 .line3-t .line3-t1-t2 {\n  float: right;\n  display: block;\n  height: 14px;\n  position: relative;\n  width: 100px;\n  text-align: center;\n  border-bottom: 1px solid black; }\n.kursova .title7 .line3-t .line3-t1-t2:after {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 35px;\n  content: \"(цифра)\"; }\n.kursova .title7 .line3-t .line3-t1-t3 {\n  float: right;\n  display: block;\n  height: 14px;\n  position: relative;\n  width: 100px;\n  text-align: center;\n  border-bottom: 1px solid black; }\n.kursova .title7 .line3-t .line3-t1-t3:after {\n  font-size: 10px;\n  position: absolute;\n  top: 20px;\n  left: 35px;\n  content: \"(літера)\"; }\n.kursova .title8 {\n  text-align: center;\n  width: 130px;\n  height: 18px;\n  margin: auto; }\n.kursova .title8 span {\n  height: 12px;\n  font-size: 14px;\n  display: block;\n  float: left; }\n.kursova .title8 .title8-t1 {\n  width: 20px;\n  height: 14px;\n  text-align: center;\n  border-bottom: 1px solid black; }\n.kursova .group {\n  margin-bottom: 90px;\n  overflow: hidden;\n  width: 100%; }\n"
+
+/***/ }),
+
+/***/ "./src/app/components/title/title.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/title/title.component.ts ***!
+  \*****************************************************/
+/*! exports provided: TitleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitleComponent", function() { return TitleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TitleComponent = /** @class */ (function () {
+    function TitleComponent() {
+    }
+    TitleComponent.prototype.ngOnInit = function () {
+    };
+    TitleComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-title',
+            template: __webpack_require__(/*! ./title.component.html */ "./src/app/components/title/title.component.html"),
+            styles: [__webpack_require__(/*! ./title.component.scss */ "./src/app/components/title/title.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], TitleComponent);
+    return TitleComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/univer-date/univer-date-create/univer-date-create.component.html":
 /*!*********************************************************************************************!*\
   !*** ./src/app/components/univer-date/univer-date-create/univer-date-create.component.html ***!
@@ -11244,6 +11322,129 @@ var GroupsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/login/login.component.html":
+/*!********************************************!*\
+  !*** ./src/app/login/login.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"col s12 m7\">\n  <h2 class=\"header\">Log in</h2>\n  <div class=\"card horizontal\">\n    <div class=\"card-stacked\">\n      <div class=\"card-content\">\n\n\n        <form class=\"col s12\" [formGroup]=\"loginForm\" (ngSubmit)=\"loginUser()\">\n          <div class=\"row\">\n            <div class=\"input-field col s12\">\n              <input id=\"email\"\n                     type=\"email\"\n                     formControlName=\"email\"\n                     [class.invalid]=\"email.touched && email.invalid\"\n              >\n              <label for=\"email\">Email</label>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"input-field col s12\">\n              <input id=\"password\"\n                     type=\"password\"\n                     formControlName=\"password\"\n                     [class.invalid]=\"password.touched && password.invalid\">\n              <label for=\"password\">Password</label>\n              <span class=\"helper-text\"\n                    data-error=\"A password should be between 6 and 16 characters long, contain at least one lower case letter, at least one upper case letter, at least one digit and special symbol($_-@!)\"\n                    data-success=\"right\"\n                    *ngIf=\"password.errors?.pattern\"\n              > </span>\n\n            </div>\n          </div>\n          <div class=\"card-action\">\n            <button class=\"btn waves-effect waves-light\" [disabled]=\"!loginForm.valid\"  type=\"submit\" name=\"action\">Log in</button>\n          </div>\n        </form>\n\n\n\n      </div>\n\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/login/login.component.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/login/login.component.ts ***!
+  \******************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _providers_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../providers/auth.service */ "./src/app/providers/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent(_auth, _router, fb, http) {
+        this._auth = _auth;
+        this._router = _router;
+        this.fb = fb;
+        this.http = http;
+        this.serverSrc = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].serverSrc + '/mylogin';
+        this.loginUserData = {
+            password: '',
+            userName: ''
+        };
+        this.loginForm = this.fb.group({
+            email: ['', [
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required,
+                ]
+            ],
+            password: ['', [
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required,
+                ]
+            ]
+        });
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    Object.defineProperty(LoginComponent.prototype, "email", {
+        get: function () {
+            return this.loginForm.get('email');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LoginComponent.prototype, "password", {
+        get: function () {
+            return this.loginForm.get('password');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    LoginComponent.prototype.loginUser = function () {
+        var _this = this;
+        this.loginUserData.userName = this.email.value;
+        this.loginUserData.password = this.password.value;
+        this.http.post(this.serverSrc, {
+            userName: this.email.value,
+            password: this.password.value
+        }).subscribe(function (isValid) {
+            if (isValid) {
+                sessionStorage.setItem('token', btoa(_this.loginUserData.userName + ':' + _this.loginUserData.password));
+                _this._router.navigate(['/students']);
+            }
+            else {
+                alert('Authentication failed.');
+            }
+        });
+    };
+    LoginComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-login',
+            template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
+            styles: [__webpack_require__(/*! ./login.component.scss */ "./src/app/login/login.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_providers_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/providers/api.service.ts":
 /*!******************************************!*\
   !*** ./src/app/providers/api.service.ts ***!
@@ -11409,6 +11610,64 @@ var ApiService = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ApiService);
     return ApiService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/providers/auth.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/providers/auth.service.ts ***!
+  \*******************************************/
+/*! exports provided: AuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api.service */ "./src/app/providers/api.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AuthService = /** @class */ (function () {
+    function AuthService(http, _router, _maping) {
+        this.http = http;
+        this._router = _router;
+        this._maping = _maping;
+        this.serverSrc = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serverSrc;
+    }
+    AuthService.prototype.editData = function (data) {
+        var _this = this;
+        this.http.post(this.serverSrc + '/login', data)
+            .subscribe(function (res) {
+            _this._router.navigate(['/students']);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    AuthService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]])
+    ], AuthService);
+    return AuthService;
 }());
 
 
