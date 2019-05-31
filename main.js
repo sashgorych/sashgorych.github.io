@@ -176,6 +176,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var routes = [
     {
         path: '',
+        component: _components_title_title_component__WEBPACK_IMPORTED_MODULE_66__["TitleComponent"]
+    },
+    {
+        path: 'login',
         component: _login_login_component__WEBPACK_IMPORTED_MODULE_65__["LoginComponent"]
     },
     {
@@ -466,7 +470,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\r\n<div class=\"\" id=\"navbarSupportedContent\">\r\n  <ul class=\"navbar-nav mr-auto\">\r\n    <li class=\"nav-item\" *ngFor=\"let item of linkList\">\r\n      <a class=\"nav-link\" routerLink=\"{{item.link}}\" routerLinkActive=\"active\">{{item.name}}</a>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<div class=\"container-for-list\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n</div>\r\n"
+module.exports = "<div class=\"main\">\r\n<div class=\"\" id=\"navbarSupportedContent\">\r\n  <ul class=\"navbar-nav mr-auto\">\r\n    <li class=\"nav-item\" *ngFor=\"let item of linkList\">\r\n      <a class=\"nav-link\" routerLink=\"{{item.link}}\" routerLinkActive=\"active\">{{item.name}}</a>\r\n    </li>\r\n    <a class=\"nav-link\" style=\"color: white\" (click)=\"logout()\">LogOut</a>\r\n\r\n  </ul>\r\n</div>\r\n<div class=\"container-for-list\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -492,15 +496,24 @@ module.exports = ".container {\n  max-width: 850px; }\n\n#navbarSupportedContent
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./providers/student.service */ "./src/app/providers/student.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(s, _router) {
+        this.s = s;
+        this._router = _router;
         this.title = 'app';
         this.linkList = [
             {
@@ -578,15 +591,20 @@ var AppComponent = /** @class */ (function () {
             {
                 'name': 'Про проект',
                 'link': '/about'
-            },
+            }
         ];
     }
+    AppComponent.prototype.logout = function () {
+        localStorage.removeItem('token');
+        this._router.navigate(['/login']);
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_providers_student_service__WEBPACK_IMPORTED_MODULE_1__["StudentService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -1204,7 +1222,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CandidateWorkComponent", function() { return CandidateWorkComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _providers_candidate_work_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../providers/candidate-work.service */ "./src/app/providers/candidate-work.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../providers/student.service */ "./src/app/providers/student.service.ts");
+/* harmony import */ var _providers_candidate_work_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../providers/candidate-work.service */ "./src/app/providers/candidate-work.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../auth.service */ "./src/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1217,14 +1237,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var CandidateWorkComponent = /** @class */ (function () {
-    function CandidateWorkComponent(provider, _router) {
+    function CandidateWorkComponent(provider, _router, r, auth) {
         this.provider = provider;
         this._router = _router;
+        this.r = r;
+        this.auth = auth;
         this.works = [];
         this.routes = this.provider.routes;
     }
     CandidateWorkComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getWorks();
     };
@@ -1268,7 +1295,9 @@ var CandidateWorkComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./candidate-work.component.html */ "./src/app/candidate-work/candidate-work.component.html"),
             styles: [__webpack_require__(/*! ./candidate-work.component.scss */ "./src/app/candidate-work/candidate-work.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_candidate_work_service__WEBPACK_IMPORTED_MODULE_2__["CandidateWorkService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_candidate_work_service__WEBPACK_IMPORTED_MODULE_3__["CandidateWorkService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _providers_student_service__WEBPACK_IMPORTED_MODULE_2__["StudentService"],
+            _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
     ], CandidateWorkComponent);
     return CandidateWorkComponent;
 }());
@@ -1680,6 +1709,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_diploma_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/diploma.service */ "./src/app/providers/diploma.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1692,14 +1722,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var DiplomaComponent = /** @class */ (function () {
-    function DiplomaComponent(provider, _router) {
+    function DiplomaComponent(provider, _router, r) {
         this.provider = provider;
         this._router = _router;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     DiplomaComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -1743,7 +1778,7 @@ var DiplomaComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./diploma.component.html */ "./src/app/components/diploma/diploma.component.html"),
             styles: [__webpack_require__(/*! ./diploma.component.scss */ "./src/app/components/diploma/diploma.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_diploma_service__WEBPACK_IMPORTED_MODULE_2__["DiplomaService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_diploma_service__WEBPACK_IMPORTED_MODULE_2__["DiplomaService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _providers_student_service__WEBPACK_IMPORTED_MODULE_3__["StudentService"]])
     ], DiplomaComponent);
     return DiplomaComponent;
 }());
@@ -2103,6 +2138,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_docent_work_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/docent-work.service */ "./src/app/providers/docent-work.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2115,14 +2151,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var DocentWorkComponent = /** @class */ (function () {
-    function DocentWorkComponent(provider, _router) {
+    function DocentWorkComponent(provider, _router, r) {
         this.provider = provider;
         this._router = _router;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     DocentWorkComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -2166,7 +2207,7 @@ var DocentWorkComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./docent-work.component.html */ "./src/app/components/docent-work/docent-work.component.html"),
             styles: [__webpack_require__(/*! ./docent-work.component.scss */ "./src/app/components/docent-work/docent-work.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_docent_work_service__WEBPACK_IMPORTED_MODULE_2__["DocentWorkService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_docent_work_service__WEBPACK_IMPORTED_MODULE_2__["DocentWorkService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _providers_student_service__WEBPACK_IMPORTED_MODULE_3__["StudentService"]])
     ], DocentWorkComponent);
     return DocentWorkComponent;
 }());
@@ -2526,6 +2567,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_faculty_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/faculty.service */ "./src/app/providers/faculty.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2538,14 +2581,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var FacultyComponent = /** @class */ (function () {
-    function FacultyComponent(provider, _router) {
+    function FacultyComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     FacultyComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -2593,7 +2643,7 @@ var FacultyComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./faculty.component.html */ "./src/app/components/faculty/faculty.component.html"),
             styles: [__webpack_require__(/*! ./faculty.component.scss */ "./src/app/components/faculty/faculty.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_faculty_service__WEBPACK_IMPORTED_MODULE_2__["FacultyService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_faculty_service__WEBPACK_IMPORTED_MODULE_2__["FacultyService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], FacultyComponent);
     return FacultyComponent;
 }());
@@ -2987,6 +3037,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_kafedra_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/kafedra.service */ "./src/app/providers/kafedra.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2999,14 +3050,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var KafedraComponent = /** @class */ (function () {
-    function KafedraComponent(provider, _router) {
+    function KafedraComponent(provider, _router, r) {
         this.provider = provider;
         this._router = _router;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     KafedraComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -3050,7 +3106,7 @@ var KafedraComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./kafedra.component.html */ "./src/app/components/kafedra/kafedra.component.html"),
             styles: [__webpack_require__(/*! ./kafedra.component.scss */ "./src/app/components/kafedra/kafedra.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_kafedra_service__WEBPACK_IMPORTED_MODULE_2__["KafedraService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_kafedra_service__WEBPACK_IMPORTED_MODULE_2__["KafedraService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _providers_student_service__WEBPACK_IMPORTED_MODULE_3__["StudentService"]])
     ], KafedraComponent);
     return KafedraComponent;
 }());
@@ -3327,6 +3383,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_kategory_teacher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/kategory-teacher.service */ "./src/app/providers/kategory-teacher.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3339,14 +3397,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var KategoryTeacherComponent = /** @class */ (function () {
-    function KategoryTeacherComponent(provider, _router) {
+    function KategoryTeacherComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     KategoryTeacherComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -3391,7 +3456,7 @@ var KategoryTeacherComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./kategory-teacher.component.html */ "./src/app/components/kategory-teacher/kategory-teacher.component.html"),
             styles: [__webpack_require__(/*! ./kategory-teacher.component.scss */ "./src/app/components/kategory-teacher/kategory-teacher.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_kategory_teacher_service__WEBPACK_IMPORTED_MODULE_2__["KategoryTeacherService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_kategory_teacher_service__WEBPACK_IMPORTED_MODULE_2__["KategoryTeacherService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], KategoryTeacherComponent);
     return KategoryTeacherComponent;
 }());
@@ -3668,6 +3733,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_kind_lessons_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/kind-lessons.service */ "./src/app/providers/kind-lessons.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3680,14 +3747,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var KindLessonsComponent = /** @class */ (function () {
-    function KindLessonsComponent(provider, _router) {
+    function KindLessonsComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     KindLessonsComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -3731,7 +3805,7 @@ var KindLessonsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./kind-lessons.component.html */ "./src/app/components/kind-lessons/kind-lessons.component.html"),
             styles: [__webpack_require__(/*! ./kind-lessons.component.scss */ "./src/app/components/kind-lessons/kind-lessons.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_kind_lessons_service__WEBPACK_IMPORTED_MODULE_2__["KindLessonsService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_kind_lessons_service__WEBPACK_IMPORTED_MODULE_2__["KindLessonsService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], KindLessonsComponent);
     return KindLessonsComponent;
 }());
@@ -4156,6 +4230,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_occupation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/occupation.service */ "./src/app/providers/occupation.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4168,14 +4244,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var OccupationComponent = /** @class */ (function () {
-    function OccupationComponent(provider, _router) {
+    function OccupationComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     OccupationComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -4219,7 +4302,7 @@ var OccupationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./occupation.component.html */ "./src/app/components/occupation/occupation.component.html"),
             styles: [__webpack_require__(/*! ./occupation.component.scss */ "./src/app/components/occupation/occupation.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_occupation_service__WEBPACK_IMPORTED_MODULE_2__["OccupationService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_occupation_service__WEBPACK_IMPORTED_MODULE_2__["OccupationService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], OccupationComponent);
     return OccupationComponent;
 }());
@@ -4377,6 +4460,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _providers_query_provider_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../providers/query-provider.service */ "./src/app/providers/query-provider.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4389,10 +4474,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var QueryComponent = /** @class */ (function () {
-    function QueryComponent(queryProvider, _actRouter) {
+    function QueryComponent(queryProvider, _actRouter, _router, auth, r) {
         this.queryProvider = queryProvider;
         this._actRouter = _actRouter;
+        this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.search = this._actRouter.snapshot.paramMap.get('id');
         this.newAnswData = [];
         this.keys = [];
@@ -4422,6 +4512,9 @@ var QueryComponent = /** @class */ (function () {
         };
     }
     QueryComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.getResult();
     };
     QueryComponent.prototype.getResult = function () {
@@ -4477,7 +4570,9 @@ var QueryComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./query.component.scss */ "./src/app/components/query/query.component.scss")]
         }),
         __metadata("design:paramtypes", [_providers_query_provider_service__WEBPACK_IMPORTED_MODULE_1__["QueryProviderService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+            _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], QueryComponent);
     return QueryComponent;
 }());
@@ -7520,6 +7615,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_session_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/session.service */ "./src/app/providers/session.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7532,14 +7629,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var SessionComponent = /** @class */ (function () {
-    function SessionComponent(provider, _router) {
+    function SessionComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     SessionComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -7587,7 +7691,7 @@ var SessionComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./session.component.html */ "./src/app/components/session/session.component.html"),
             styles: [__webpack_require__(/*! ./session.component.scss */ "./src/app/components/session/session.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_session_service__WEBPACK_IMPORTED_MODULE_2__["SessionService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_session_service__WEBPACK_IMPORTED_MODULE_2__["SessionService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], SessionComponent);
     return SessionComponent;
 }());
@@ -7864,6 +7968,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_speciality_teachers_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/speciality-teachers.service */ "./src/app/providers/speciality-teachers.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7876,14 +7982,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var SpecialityTeachersComponent = /** @class */ (function () {
-    function SpecialityTeachersComponent(provider, _router) {
+    function SpecialityTeachersComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     SpecialityTeachersComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -7931,7 +8044,8 @@ var SpecialityTeachersComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./speciality-teachers.component.html */ "./src/app/components/speciality-teachers/speciality-teachers.component.html"),
             styles: [__webpack_require__(/*! ./speciality-teachers.component.scss */ "./src/app/components/speciality-teachers/speciality-teachers.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_speciality_teachers_service__WEBPACK_IMPORTED_MODULE_2__["SpecialityTeachersService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_speciality_teachers_service__WEBPACK_IMPORTED_MODULE_2__["SpecialityTeachersService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], SpecialityTeachersComponent);
     return SpecialityTeachersComponent;
 }());
@@ -8505,6 +8619,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_studing_plan_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/studing-plan.service */ "./src/app/providers/studing-plan.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8517,14 +8633,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var StudingPlanComponent = /** @class */ (function () {
-    function StudingPlanComponent(provider, _router) {
+    function StudingPlanComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     StudingPlanComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -8572,7 +8695,8 @@ var StudingPlanComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./studing-plan.component.html */ "./src/app/components/studing-plan/studing-plan.component.html"),
             styles: [__webpack_require__(/*! ./studing-plan.component.scss */ "./src/app/components/studing-plan/studing-plan.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_studing_plan_service__WEBPACK_IMPORTED_MODULE_2__["StudingPlanService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_studing_plan_service__WEBPACK_IMPORTED_MODULE_2__["StudingPlanService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+            _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], StudingPlanComponent);
     return StudingPlanComponent;
 }());
@@ -8849,6 +8973,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_subject_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/subject.service */ "./src/app/providers/subject.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8861,14 +8987,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var SubjectComponent = /** @class */ (function () {
-    function SubjectComponent(provider, _router) {
+    function SubjectComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     SubjectComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -8916,7 +9049,7 @@ var SubjectComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./subject.component.html */ "./src/app/components/subject/subject.component.html"),
             styles: [__webpack_require__(/*! ./subject.component.scss */ "./src/app/components/subject/subject.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_subject_service__WEBPACK_IMPORTED_MODULE_2__["SubjectService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_subject_service__WEBPACK_IMPORTED_MODULE_2__["SubjectService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], SubjectComponent);
     return SubjectComponent;
 }());
@@ -9669,6 +9802,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_teacher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/teacher.service */ "./src/app/providers/teacher.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9681,15 +9816,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var TeacherComponent = /** @class */ (function () {
-    function TeacherComponent(provider, _router, _actRouter) {
+    function TeacherComponent(auth, provider, _router, _actRouter, r) {
+        this.auth = auth;
         this.provider = provider;
         this._router = _router;
         this._actRouter = _actRouter;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     TeacherComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -9750,9 +9892,11 @@ var TeacherComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./teacher.component.html */ "./src/app/components/teacher/teacher.component.html"),
             styles: [__webpack_require__(/*! ./teacher.component.scss */ "./src/app/components/teacher/teacher.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_teacher_service__WEBPACK_IMPORTED_MODULE_2__["TeacherService"],
+        __metadata("design:paramtypes", [_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+            _providers_teacher_service__WEBPACK_IMPORTED_MODULE_2__["TeacherService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], TeacherComponent);
     return TeacherComponent;
 }());
@@ -9794,6 +9938,9 @@ module.exports = "@charset \"UTF-8\";\n.kursova {\n  width: 730px;\n  margin: au
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitleComponent", function() { return TitleComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9804,10 +9951,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var TitleComponent = /** @class */ (function () {
-    function TitleComponent() {
+    function TitleComponent(_router, auth, r) {
+        this._router = _router;
+        this.auth = auth;
+        this.r = r;
     }
     TitleComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
     };
     TitleComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -9815,7 +9971,7 @@ var TitleComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./title.component.html */ "./src/app/components/title/title.component.html"),
             styles: [__webpack_require__(/*! ./title.component.scss */ "./src/app/components/title/title.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_3__["StudentService"]])
     ], TitleComponent);
     return TitleComponent;
 }());
@@ -10117,6 +10273,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_univer_date_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/univer-date.service */ "./src/app/providers/univer-date.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10129,14 +10286,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var UniverDateComponent = /** @class */ (function () {
-    function UniverDateComponent(provider, _router) {
+    function UniverDateComponent(provider, _router, r) {
         this.provider = provider;
         this._router = _router;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     UniverDateComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -10184,7 +10346,7 @@ var UniverDateComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./univer-date.component.html */ "./src/app/components/univer-date/univer-date.component.html"),
             styles: [__webpack_require__(/*! ./univer-date.component.scss */ "./src/app/components/univer-date/univer-date.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_univer_date_service__WEBPACK_IMPORTED_MODULE_2__["UniverDateService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_univer_date_service__WEBPACK_IMPORTED_MODULE_2__["UniverDateService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _providers_student_service__WEBPACK_IMPORTED_MODULE_3__["StudentService"]])
     ], UniverDateComponent);
     return UniverDateComponent;
 }());
@@ -10461,6 +10623,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_control_form_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../providers/control-form.service */ "./src/app/providers/control-form.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10473,14 +10637,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var ControlFormComponent = /** @class */ (function () {
-    function ControlFormComponent(provider, _router) {
+    function ControlFormComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     ControlFormComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -10528,7 +10699,7 @@ var ControlFormComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./control-form.component.html */ "./src/app/control-form/control-form.component.html"),
             styles: [__webpack_require__(/*! ./control-form.component.scss */ "./src/app/control-form/control-form.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_control_form_service__WEBPACK_IMPORTED_MODULE_2__["ControlFormService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_control_form_service__WEBPACK_IMPORTED_MODULE_2__["ControlFormService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], ControlFormComponent);
     return ControlFormComponent;
 }());
@@ -10830,6 +11001,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_decanat_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../providers/decanat.service */ "./src/app/providers/decanat.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../auth.service */ "./src/auth.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10842,14 +11015,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var DecanatComponent = /** @class */ (function () {
-    function DecanatComponent(provider, _router) {
+    function DecanatComponent(provider, _router, auth, r) {
         this.provider = provider;
         this._router = _router;
+        this.auth = auth;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     DecanatComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -10897,7 +11077,7 @@ var DecanatComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./decanat.component.html */ "./src/app/decanat/decanat.component.html"),
             styles: [__webpack_require__(/*! ./decanat.component.scss */ "./src/app/decanat/decanat.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_decanat_service__WEBPACK_IMPORTED_MODULE_2__["DecanatService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_decanat_service__WEBPACK_IMPORTED_MODULE_2__["DecanatService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _providers_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"]])
     ], DecanatComponent);
     return DecanatComponent;
 }());
@@ -11310,6 +11490,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_groups_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../providers/groups.service */ "./src/app/providers/groups.service.ts");
+/* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../providers/student.service */ "./src/app/providers/student.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11322,14 +11503,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var GroupsComponent = /** @class */ (function () {
-    function GroupsComponent(provider, _router) {
+    function GroupsComponent(provider, _router, r) {
         this.provider = provider;
         this._router = _router;
+        this.r = r;
         this.routes = this.provider.routes;
         this.data = [];
     }
     GroupsComponent.prototype.ngOnInit = function () {
+        if (!this.r.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getData();
     };
@@ -11377,7 +11563,7 @@ var GroupsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./groups.component.html */ "./src/app/groups/groups.component.html"),
             styles: [__webpack_require__(/*! ./groups.component.scss */ "./src/app/groups/groups.component.scss")]
         }),
-        __metadata("design:paramtypes", [_providers_groups_service__WEBPACK_IMPORTED_MODULE_2__["GroupsService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_providers_groups_service__WEBPACK_IMPORTED_MODULE_2__["GroupsService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _providers_student_service__WEBPACK_IMPORTED_MODULE_3__["StudentService"]])
     ], GroupsComponent);
     return GroupsComponent;
 }());
@@ -11710,14 +11896,11 @@ var AuthService = /** @class */ (function () {
         this._maping = _maping;
         this.serverSrc = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serverSrc;
     }
-    AuthService.prototype.editData = function (data) {
-        var _this = this;
-        this.http.post(this.serverSrc + '/login', data)
-            .subscribe(function (res) {
-            _this._router.navigate(['/students']);
-        }, function (err) {
-            console.log(err);
-        });
+    AuthService.prototype.isLogin = function () {
+        if (localStorage.getItem('token') == 'user') {
+            return true;
+        }
+        return false;
     };
     AuthService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -13292,6 +13475,12 @@ var StudentService = /** @class */ (function () {
             console.log(err);
         });
     };
+    StudentService.prototype.isLogin = function () {
+        if (localStorage.getItem('token') == 'user') {
+            return true;
+        }
+        return false;
+    };
     StudentService.prototype.redirectToMainPage = function () {
         this._router.navigate(['/students']);
     };
@@ -14344,6 +14533,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _providers_student_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../providers/student.service */ "./src/app/providers/student.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _providers_groups_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../providers/groups.service */ "./src/app/providers/groups.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../auth.service */ "./src/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -14357,8 +14547,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var StudentListComponent = /** @class */ (function () {
-    function StudentListComponent(_actRouter, _studentService, _router, grupsService) {
+    function StudentListComponent(auth, _actRouter, _studentService, _router, grupsService) {
+        this.auth = auth;
         this._actRouter = _actRouter;
         this._studentService = _studentService;
         this._router = _router;
@@ -14367,6 +14559,9 @@ var StudentListComponent = /** @class */ (function () {
         this.searchStudents = [];
     }
     StudentListComponent.prototype.ngOnInit = function () {
+        if (!this._studentService.isLogin()) {
+            this._router.navigate(['/login']);
+        }
         this.updateDate = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
         this.getStudents();
         this.getGrups();
@@ -14473,7 +14668,8 @@ var StudentListComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./student-list.component.html */ "./src/app/student-list/student-list.component.html"),
             styles: [__webpack_require__(/*! ./student-list.component.scss */ "./src/app/student-list/student-list.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+        __metadata("design:paramtypes", [_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
             _providers_student_service__WEBPACK_IMPORTED_MODULE_1__["StudentService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             _providers_groups_service__WEBPACK_IMPORTED_MODULE_3__["GroupsService"]])
@@ -14689,6 +14885,63 @@ var StudentNewComponent = /** @class */ (function () {
             _providers_groups_service__WEBPACK_IMPORTED_MODULE_4__["GroupsService"]])
     ], StudentNewComponent);
     return StudentNewComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/auth.service.ts":
+/*!*****************************!*\
+  !*** ./src/auth.service.ts ***!
+  \*****************************/
+/*! exports provided: AuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _app_providers_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/providers/api.service */ "./src/app/providers/api.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AuthService = /** @class */ (function () {
+    function AuthService(http, _router, _maping) {
+        this.http = http;
+        this._router = _router;
+        this._maping = _maping;
+        this.serverSrc = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serverSrc;
+    }
+    AuthService.prototype.isLogin = function () {
+        if (localStorage.getItem('token') == 'user') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    AuthService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _app_providers_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]])
+    ], AuthService);
+    return AuthService;
 }());
 
 
