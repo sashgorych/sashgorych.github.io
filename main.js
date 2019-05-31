@@ -98,7 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_kategory_teacher_kategory_teacher_create_kategory_teacher_create_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./components/kategory-teacher/kategory-teacher-create/kategory-teacher-create.component */ "./src/app/components/kategory-teacher/kategory-teacher-create/kategory-teacher-create.component.ts");
 /* harmony import */ var _components_teacher_teacher_search_teacher_search_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./components/teacher/teacher-search/teacher-search.component */ "./src/app/components/teacher/teacher-search/teacher-search.component.ts");
 /* harmony import */ var _candidate_work_candidate_work_edit_candidate_work_edit_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./candidate-work/candidate-work-edit/candidate-work-edit.component */ "./src/app/candidate-work/candidate-work-edit/candidate-work-edit.component.ts");
-/* harmony import */ var _components_title_title_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./components/title/title.component */ "./src/app/components/title/title.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _components_title_title_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./components/title/title.component */ "./src/app/components/title/title.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -171,14 +172,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     {
         path: '',
-        component: _components_title_title_component__WEBPACK_IMPORTED_MODULE_65__["TitleComponent"]
+        component: _login_login_component__WEBPACK_IMPORTED_MODULE_65__["LoginComponent"]
     },
     {
         path: 'about',
-        component: _components_title_title_component__WEBPACK_IMPORTED_MODULE_65__["TitleComponent"]
+        component: _components_title_title_component__WEBPACK_IMPORTED_MODULE_66__["TitleComponent"]
     },
     {
         path: 'students',
@@ -11476,21 +11478,15 @@ var LoginComponent = /** @class */ (function () {
         configurable: true
     });
     LoginComponent.prototype.loginUser = function () {
-        var _this = this;
         this.loginUserData.userName = this.email.value;
         this.loginUserData.password = this.password.value;
-        this.http.post(this.serverSrc, {
-            userName: this.email.value,
-            password: this.password.value
-        }).subscribe(function (isValid) {
-            if (isValid) {
-                sessionStorage.setItem('token', btoa(_this.loginUserData.userName + ':' + _this.loginUserData.password));
-                _this._router.navigate(['/students']);
-            }
-            else {
-                alert('Authentication failed.');
-            }
-        });
+        if (this.loginUserData.userName == 'user' && this.loginUserData.password == "1111") {
+            localStorage.setItem('token', this.loginUserData.userName);
+            this._router.navigate(['/students']);
+        }
+        else {
+            alert('authorization error');
+        }
     };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
