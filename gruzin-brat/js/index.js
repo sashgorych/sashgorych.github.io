@@ -5,8 +5,8 @@ window.onload = function () {
     $('#check-out').datepicker({
         minDate: new Date()
     })
-        var element = document.querySelectorAll( '.full-screen');
-        Intense( element );
+    lightGallery(document.getElementById('lightgallery'));
+    lightGallery(document.getElementById('lightgallery2'));
 }
 let hamburger = document.querySelector('.hamburger');
 let menu = document.querySelector('.menu');

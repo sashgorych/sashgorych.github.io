@@ -387,6 +387,10 @@ header .mobile-call{
   @include wrapper();
   margin: auto;
   .imgs{
+    .item{
+      width: 170px;
+      height: 170px;
+    }
     img{
       cursor: pointer;
     }
@@ -640,9 +644,13 @@ footer{
     height: auto;
   }
     .img-small{
-      img{
+      .item{
         margin: 0 10px 10px 10px;
         width: calc(20% - 20px);
+      }
+      img{
+        width: 100%;
+        height: auto;
       }
       justify-content: center;
       margin-top: 30px;
@@ -660,9 +668,16 @@ footer{
   .choose-date{
     right: 15px;
   }
-  .rooms-container .imgs .img-small img{
-    width: calc(25% - 20px);
-    height: auto;
+  .rooms-container .imgs .img-small{
+    .item{
+      width: calc(25% - 20px);
+      height: auto;
+    }
+    img{
+      width: 100%;
+      height: auto;
+    }
+
   }
   header .bottom{
     margin-top: 170px;
@@ -727,9 +742,11 @@ footer{
     overflow: scroll;
     position: fixed;
   }
-  .rooms-container .imgs .img-small img{
-    width: calc(33.33333333333% - 20px);
-    height: auto;
+  .rooms-container .imgs .img-small {
+.item{
+  width: calc(33.33333333333% - 20px);
+  height: auto;
+}
   }
   header{
     position: relative;
@@ -813,7 +830,7 @@ transition: 0.3s;
   .choose-date .room{
     margin-left: 0;
   }
-  .rooms-container .imgs .img-small img{
+  .rooms-container .imgs .img-small .item{
     width: calc(50% - 20px);
     height: auto;
   }
