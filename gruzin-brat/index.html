@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
+    <link href="./css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <title>Special offer</title>
+</head>
+<body>
+<header>
+    <div id="submitMsg">
+        <h1 class="success">Спасибо! С вами свяжется наш менеджер.</h1>
+    </div>
+<div class="wrapper top" id="main">
+    <form class="choose-date">
+        <input type="text" placeholder="Введите Ваше ФИО" name="name" id="name" required>
+        <input type="text" placeholder="Введите номер телефона" name="phone" id="phone" required >
+        <input type="text" placeholder="Введите email" name='email' id="email">
+        <input type="text" class="datepicker-here" id="check-in" required name="check-in" placeholder="Дата заезда">
+        <input type="text" class="datepicker-here" id="check-out" required name="check-out" placeholder="Дата отъезда">
+        <select name="" name="count" id="countPeople">
+            <option value="1 взрослый" selected>1 взрослый</option>
+            <option value="2 взрослых">2 взрослых</option>
+            <option value="3 взрослых">3 взрослых</option>
+            <option value="4 взрослых">4 взрослых</option>
+            <option value="5 взрослых">5 взрослых</option>
+        </select>
+        <select name="" id="childCount" class="child" name="child">
+            <option value="Без детей" selected>Без детей</option>
+            <option value="2 ребёнка">2 ребёнка</option>
+            <option value="3 ребёнка">3 ребёнка</option>
+            <option value="4 ребёнка">4 ребёнка</option>
+        </select>
+        <select name="" id="roomCount" class="room" name="room">
+            <option value="1 номер" selected>1 номер</option>
+            <option value="2 номера">2 номера</option>
+            <option value="3 номера">3 номера</option>
+        </select>
+        <div class="buttons">
+            <div class="button"  id="cancel"><span>Отмена</span></div>
+
+            <button type="submit" class="button" id="sendData">Отправить</button>
+        </div>
+    </form>
+
+    <div class="pair">
+    <img src="./img/logo.png" alt="" class="logo">
+        <nav>
+            <ul class="menu">
+                <li><a href="#main">Главная</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#rooms">Номера</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <button class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+    </button>
+    <p  class="getDate">Выбрать дату</p>
+</div>
+    <div class="wrapper bottom">
+        <div class="text">
+            <h1>БАТУМИ</h1>
+            <p>ЛУЧШИЕ НОМЕРА ДЛЯ ОТЛИЧНОГО ОТДЫХА</p>
+        </div>
+        <div class="cont">
+        <div class="call">
+            <p>Позвонить</p>
+        </div>
+            <div class="numbers-window">
+                <a href="tel:+380961234567" class="item item3">
+                    <img src="./img/icon13.png" alt="address">
+                    <p>+38 (096) 123 45 67</p>
+                </a>
+                <a href="tel:+380951234567" class="item item4">
+                    <img src="./img/icon14.png" alt="address">
+                    <p>+38 (095) 123 45 67</p>
+                </a>
+
+            </div>
+
+        </div>
+        <div class="call mobile-call">
+            <p>Выбрать дату</p>
+        </div>
+
+    </div>
+</header>
+<main>
+    <section class="about" id="about">
+        <div class="about-container">
+        <h1 class="title">О нас</h1>
+            <p class="sub-title">Апарт-отель ORBI CITY расположен в 100 м от пляжа Батуми. <br> дЛЯ КЛИЕНТОВ ПРЕДЛАГАЕТСЯ МНОЖЕСТВО УСЛУГ, СРЕДИ КОТОРЫХ:</p>
+       <div class="service-icons">
+           <div class="about-icon">
+               <p class="top">5 км</p>
+               <img src="./img/icon1.png" alt="plane">
+               <p>до международного аэропорта Батуми</p>
+           </div>
+           <div class="about-icon">
+               <p class="top">АВТОМОБИЛЬ</p>
+               <img src="./img/icon2.png" alt="plane">
+               <p>Пункт проката на территории отеля</p>
+           </div>
+           <div class="about-icon">
+               <p class="top">Бар</p>
+               <img src="./img/icon3.png" alt="plane">
+               <p>Общий лаундж на территории</p>
+           </div>
+           <div class="about-icon">
+               <p class="top">Терраса</p>
+               <img src="./img/icon4.png" alt="plane">
+               <p>К услугам гостей</p>
+           </div>
+           <div class="about-icon">
+               <p class="top">WI-FI</p>
+               <img src="./img/icon5.png" alt="plane">
+               <p>На всей территории бесплатный WI-FI</p>
+           </div>
+
+       </div>
+        </div>
+    </section>
+    <section class="rooms" id="rooms">
+        <div class="rooms-container">
+            <h1 class="title">НОМЕРА</h1>
+            <p class="sub-title">ВО ВСЕХ НОМЕРАХ ПРИСУТСТВУЮТ ЛУЧШИЕ УДОБСТВА ДЛЯ КОМФОРТНОГО ПРОЖИВАНИЯ</p>
+        <div class="imgs">
+            <img src="./img/4.png" alt="room" class="big full-screen">
+            <div class="img-small">
+                <img src="./img/2.png" alt="room" class="full-screen">
+                <img src="./img/5.png" alt="room" class="full-screen">
+                <img src="./img/6.png" alt="room" class="full-screen">
+                <img src="./img/7.png" alt="room" class="full-screen">
+                <img src="./img/8.png" alt="room" class="full-screen">
+            </div>
+        </div>
+            <div class="service-icons">
+                <div class="about-icon">
+                    <p class="top">ТЕЛЕВИЗОР</p>
+                    <img src="./img/icon6.png" alt="plane">
+                    <p>С плоским экраном</p>
+                </div>
+                <div class="about-icon">
+                    <p class="top">КОНДИЦИОНЕР</p>
+                    <img src="./img/icon7.png" alt="plane">
+                    <p>В каждом номере</p>
+                </div>
+                <div class="about-icon">
+                    <p class="top">ВАННАЯ</p>
+                    <img src="./img/icon8.png" alt="plane">
+                    <p>С душем, феном и принадлежностями</p>
+                </div>
+                <div class="about-icon">
+                    <p class="top">КУХНЯ</p>
+                    <img src="./img/icon9.png" alt="plane">
+                    <p>С обеденной зоной</p>
+                </div>
+                <div class="about-icon">
+                    <p class="top">БАЛКОН</p>
+                    <img src="./img/icon10.png" alt="plane">
+                    <p>С видом на море</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="contacts" id="contacts">
+        <div class="contacts-container">
+            <h1 class="title">КОНТАКТЫ</h1>
+            <div class="contacts-list">
+                <div class="item item1">
+                    <img src="./img/icon11.png" alt="address">
+                    <p>Sherif Khimshiashvili Street, 7 Block A, 6010 Батуми, Грузия</p>
+                </div>
+                <a href="#" class="item item2">
+                    <img src="./img/icon12.png" alt="address">
+                    <p>batymhotel5@gmail.com</p>
+                </a>
+                <div class="pair">
+                <a href="tel:+380961234567" class="item item3">
+                    <img src="./img/icon13.png" alt="address">
+                    <p>+38 (096) 123 45 67</p>
+                </a>
+                    <a href="tel:+380951234567" class="item item4">
+                    <img src="./img/icon14.png" alt="address">
+                    <p>+38 (095) 123 45 67</p>
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-content">
+    <img src="./img/logo.png" class="logo" alt="batumy">
+    <nav>
+        <ul>
+            <li><a href="#main">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#rooms">Номера</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="phones">
+        <a href="tel:+380961234567" class="item item3">
+            <img src="./img/icon13.png" alt="address">
+            <p>+38 (096) 123 45 67</p>
+        </a>
+        <a href="tel:+380951234567" class="item item4">
+            <img src="./img/icon14.png" alt="address">
+            <p>+38 (095) 123 45 67</p>
+        </a>
+    </div>
+    </div>
+    <a class="copyright">© COPYRIGHT 2020</a>
+</footer>
+<script src="js/intense.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./js/datepicker.min.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
