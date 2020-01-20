@@ -1,9 +1,12 @@
 window.onload = function () {
     $('#check-in').datepicker({
-        minDate: new Date()
+        minDate: new Date(),
+        autoClose: true
+
     })
     $('#check-out').datepicker({
-        minDate: new Date()
+        minDate: new Date(),
+        autoClose: true
     })
     lightGallery(document.getElementById('lightgallery'));
     lightGallery(document.getElementById('lightgallery2'));
