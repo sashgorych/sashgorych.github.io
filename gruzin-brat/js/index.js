@@ -10,6 +10,7 @@ window.onload = function () {
     })
     lightGallery(document.getElementById('lightgallery'));
     lightGallery(document.getElementById('lightgallery2'));
+    checkCookie();
 }
 let hamburger = document.querySelector('.hamburger');
 let menu = document.querySelector('.menu');
@@ -172,4 +173,16 @@ function call(msg) {
         }
     });
 
+}
+document.querySelector('#apply').addEventListener('click',cookieApply)
+function checkCookie () {
+    let coocieaccept= localStorage.getItem('coocie-accept')
+    if(!coocieaccept){
+        document.querySelector('.coocie-baner').classList.add('show')
+    }
+}
+function cookieApply(e) {
+    e.preventDefault();
+    localStorage.setItem('coocie-accept', true);
+    document.querySelector('.coocie-baner').classList.remove('show')
 }
