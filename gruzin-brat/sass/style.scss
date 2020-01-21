@@ -480,25 +480,30 @@ header .mobile-call{
   }
 }
 #submitMsg{
+  max-width: 830px;
+  opacity: 0.8;
+  border-radius: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  background: black;
 text-align: center;
   align-items: center;
   display: none;
   h1{
-    color: black;
+    color: white;
     font-size: 24px;
   }
   &.active{
     display: flex;
   }
   position: fixed;
+  box-sizing: border-box;
+  padding: 10px;
   top: 20px;
-  left: 0;
-  right: 0px;
   width: 100%;
   z-index: 3;
   height: 100px;
-  border-radius: 10px;
-  background: white;
 }
 .choose-date{
   z-index: 5;
