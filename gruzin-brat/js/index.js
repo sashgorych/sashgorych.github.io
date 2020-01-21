@@ -148,7 +148,6 @@ document.querySelector('#sendData').onclick = function (e) {
     }
     if(!error) {
         call(message);
-        showSuccess();
     }
 }
 function showSuccess() {
@@ -167,6 +166,8 @@ function call(msg) {
             let form = document.querySelector('.choose-date');
            form.classList.remove('active');
            form.reset();
+            showSuccess();
+
         },
         error: function (xhr, str) {
             alert('Возникла ошибка: ' + xhr.responseCode);
