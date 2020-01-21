@@ -590,21 +590,27 @@ text-align: center;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
+  min-height: 80px;
+  border-radius: 54px;
+  align-items: center;
+  justify-content: center;
   background: rgba(0,0,0,.95);
   z-index: 100;
   line-height: 20px !important;
   vertical-align: middle;
+  opacity: .8;
   p{
     text-align: center;
     line-height: 20px;
   }
   &.show{
-    display: block;
+    display: flex;
+
   }
 }
 #apply {
   cursor: pointer;
-  top: 10px;
+  top: 30px;
   color: #fff;
   font-size: 1em;
   z-index: 100;
