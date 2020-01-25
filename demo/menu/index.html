@@ -30,13 +30,20 @@
 <script src="./js/datepicker.min.js"></script>
 <script src="./js/lightgallery.min.js"></script>
 
-<script src="js/index.js"></script>
 <script>
+document.querySelector('.back').addEventListener('click',function (e) {
+    if(document.querySelector('.back').classList.contains('active-bg')){
+        document.querySelector('.cont').classList.toggle('active')
+        document.querySelector('.menu').classList.toggle('active')
+        document.querySelector('.back').classList.toggle('active-bg');
+    }
+})
 document.querySelector('.rect').addEventListener('click',function (e) {
     document.querySelector('.cont').classList.toggle('active')
     document.querySelector('.menu').classList.toggle('active')
-    document.querySelector('.back').classList.toggle('active')
+    document.querySelector('.back').classList.toggle('active-bg');
 })
+
 </script>
 </body>
 </html>

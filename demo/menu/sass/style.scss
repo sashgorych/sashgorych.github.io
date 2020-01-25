@@ -136,9 +136,9 @@ select {
   background: url("../img/back.png") no-repeat;
   background-size: 100% 799px;
 
-  &.active{
+  &.active-bg{
     transition: .3s;
     perspective: 500px;
-    transform:translateX(50%) scale3d(.8, 0.8, 0.2);;
+    transform:translateX(50%) scale3d(.8, 0.8, 0.2);
   }
 }
