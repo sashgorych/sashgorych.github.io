@@ -37,6 +37,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main-page/main-page.component */ "./src/app/main-page/main-page.component.ts");
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
+
 
 
 
@@ -45,6 +47,10 @@ var routes = [
     {
         path: '',
         component: _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_3__["MainPageComponent"],
+    },
+    {
+        path: 'profile',
+        component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_4__["ProfileComponent"],
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -130,9 +136,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main-page/main-page.component */ "./src/app/main-page/main-page.component.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main-page/main-page.component */ "./src/app/main-page/main-page.component.ts");
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
+
+
 
 
 
@@ -145,20 +155,56 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_5__["MainPageComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+                _main_page_main_page_component__WEBPACK_IMPORTED_MODULE_6__["MainPageComponent"],
+                _profile_profile_component__WEBPACK_IMPORTED_MODULE_7__["ProfileComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/keyframes.ts":
+/*!******************************!*\
+  !*** ./src/app/keyframes.ts ***!
+  \******************************/
+/*! exports provided: swing, fadeOutLeft, fadeOutRight */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "swing", function() { return swing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fadeOutLeft", function() { return fadeOutLeft; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fadeOutRight", function() { return fadeOutRight; });
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+// keyframes.ts Angular code
+
+var swing = [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate3d(0, 0, 1, 15deg)', offset: .2 }),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate3d(0, 0, 1, -10deg)', offset: .4 }),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate3d(0, 0, 1, 5deg)', offset: .6 }),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate3d(0, 0, 1, -5deg)', offset: .8 }),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'none', offset: 1 })
+];
+var fadeOutLeft = [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 1, offset: .0 }),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0, transform: 'translate3d(-100%, 0, 0)', offset: 1 })
+];
+var fadeOutRight = [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 1, offset: .0 }),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0, transform: 'translate3d(100%, 0, 0)', offset: 1 })
+];
 
 
 /***/ }),
@@ -170,7 +216,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\n<div class=\"menu-top\">\n  <img src=\"../../assets/img/Grunge-Hall-final.png\" alt=\"\">\n  <div class=\"user\">\n    <img src=\"../../assets/img/user.png\" alt=\"\">\n  </div>\n</div>\n  <div class=\"logo\">\n    <div class=\"left\">\n      <img src=\"../../assets/img/grunge.png\" alt=\"\">\n    </div>\n    <div class=\"right\">\n      <img src=\"../../assets/img/hall.png\" alt=\"\">\n\n    </div>\n  </div>\n<div class=\"bottom-logo\">\n  <img src=\"../../assets/img/play.png\" alt=\"\">\n  <div class=\"work-time\">\n    <p>ПН-ПТ: </p>\n    <p>7:00 - 22:00</p>\n  </div>\n</div>\n  <div class=\"order\">\n    <img src=\"../../assets/img/order-icon.png\" alt=\"\">\n    <p>Бронь</p>\n  </div>\n  <div class=\"services\">\n    <h1>Послуги</h1>\n    <div class=\"services-content\">\n    <div class=\"item\">\n      <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n      <div class=\"circle\"></div>\n      <div class=\"bottom\">\n      <p>Репетиції</p>\n      <div class=\"arrow\">\n        <img src=\"../../assets/img/arrow.png\" alt=\"\">\n      </div>\n      </div>\n    </div>\n      <div class=\"item\">\n        <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n        <div class=\"circle\"></div>\n        <div class=\"bottom\">\n          <p>Репетиції</p>\n          <div class=\"arrow\">\n            <img src=\"../../assets/img/arrow.png\" alt=\"\">\n          </div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n        <div class=\"circle\"></div>\n        <div class=\"bottom\">\n          <p>Репетиції</p>\n          <div class=\"arrow\">\n            <img src=\"../../assets/img/arrow.png\" alt=\"\">\n          </div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n        <div class=\"circle\"></div>\n        <div class=\"bottom\">\n          <p>Репетиції</p>\n          <div class=\"arrow\">\n            <img src=\"../../assets/img/arrow.png\" alt=\"\">\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-content\"\n     [@cardAnimator]=\"animationState\"\n     (@cardAnimator.done)=\"resetAnimationState()\"\n     (swipeleft)=\"startAnimation('fadeOutLeft')\"\n     (swiperight)=\"startAnimation('zoomOutRight')\"\n>\n<div class=\"menu-top\">\n  <img src=\"../../assets/img/Grunge-Hall-final.png\" alt=\"\">\n  <div class=\"user\">\n    <img src=\"../../assets/img/user.png\" alt=\"\">\n  </div>\n</div>\n  <div class=\"logo\">\n    <div class=\"left\">\n      <img src=\"../../assets/img/grunge.png\" alt=\"\">\n    </div>\n    <div class=\"right\">\n      <img src=\"../../assets/img/hall.png\" alt=\"\">\n\n    </div>\n  </div>\n<div class=\"bottom-logo\">\n  <img src=\"../../assets/img/play.png\" alt=\"\">\n  <div class=\"work-time\">\n    <p>ПН-ПТ: </p>\n    <p>7:00 - 22:00</p>\n  </div>\n</div>\n  <div class=\"order\">\n    <img src=\"../../assets/img/order-icon.png\" alt=\"\">\n    <p>Бронь</p>\n  </div>\n  <div class=\"services\">\n    <h1>Послуги</h1>\n    <div class=\"services-content\">\n    <div class=\"item\">\n      <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n      <div class=\"circle\"></div>\n      <div class=\"bottom\">\n      <p>Репетиції</p>\n      <div class=\"arrow\">\n        <img src=\"../../assets/img/arrow.png\" alt=\"\">\n      </div>\n      </div>\n    </div>\n      <div class=\"item\">\n        <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n        <div class=\"circle\"></div>\n        <div class=\"bottom\">\n          <p>Репетиції</p>\n          <div class=\"arrow\">\n            <img src=\"../../assets/img/arrow.png\" alt=\"\">\n          </div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n        <div class=\"circle\"></div>\n        <div class=\"bottom\">\n          <p>Репетиції</p>\n          <div class=\"arrow\">\n            <img src=\"../../assets/img/arrow.png\" alt=\"\">\n          </div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <img class='icon' src=\"../../assets/img/ouse.png\" alt=\"\">\n        <div class=\"circle\"></div>\n        <div class=\"bottom\">\n          <p>Репетиції</p>\n          <div class=\"arrow\">\n            <img src=\"../../assets/img/arrow.png\" alt=\"\">\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -197,22 +243,128 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainPageComponent", function() { return MainPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _keyframes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../keyframes */ "./src/app/keyframes.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
 
 
 var MainPageComponent = /** @class */ (function () {
-    function MainPageComponent() {
+    function MainPageComponent(router) {
+        this.router = router;
     }
+    MainPageComponent.prototype.startAnimation = function (state) {
+        console.log(state);
+        if (!this.animationState) {
+            this.animationState = state;
+        }
+    };
+    MainPageComponent.prototype.resetAnimationState = function () {
+        if (this.animationState) {
+            this.router.navigate(['profile']);
+        }
+        this.animationState = '';
+    };
     MainPageComponent.prototype.ngOnInit = function () {
     };
     MainPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-main-page',
             template: __webpack_require__(/*! ./main-page.component.html */ "./src/app/main-page/main-page.component.html"),
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["trigger"])('cardAnimator', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])('* => swing', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])(1000, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_keyframes__WEBPACK_IMPORTED_MODULE_3__["swing"]))),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])('* => fadeOutLeft', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])(500, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_keyframes__WEBPACK_IMPORTED_MODULE_3__["fadeOutLeft"]))),
+                ])
+            ],
             styles: [__webpack_require__(/*! ./main-page.component.scss */ "./src/app/main-page/main-page.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], MainPageComponent);
     return MainPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/profile/profile.component.html":
+/*!************************************************!*\
+  !*** ./src/app/profile/profile.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"\"\n     [@cardAnimator]=\"animationState\"\n     (@cardAnimator.done)=\"resetAnimationState()\"\n     (swipeleft)=\"startAnimation('fadeOutRight')\"\n     (swiperight)=\"startAnimation('zoomOutRight')\"\n>\n  <img src=\"../../assets/img/bg.png\" alt=\"\">\n  <p>swipe</p>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/profile/profile.component.scss":
+/*!************************************************!*\
+  !*** ./src/app/profile/profile.component.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2ZpbGUvcHJvZmlsZS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/profile/profile.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/profile/profile.component.ts ***!
+  \**********************************************/
+/*! exports provided: ProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileComponent", function() { return ProfileComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _keyframes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../keyframes */ "./src/app/keyframes.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+var ProfileComponent = /** @class */ (function () {
+    function ProfileComponent(router) {
+        this.router = router;
+    }
+    ProfileComponent.prototype.startAnimation = function (state) {
+        console.log(state);
+        if (!this.animationState) {
+            this.animationState = state;
+        }
+    };
+    ProfileComponent.prototype.resetAnimationState = function () {
+        if (this.animationState) {
+            this.router.navigate(['']);
+        }
+        this.animationState = '';
+    };
+    ProfileComponent.prototype.ngOnInit = function () {
+    };
+    ProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-profile',
+            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/profile/profile.component.html"),
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["trigger"])('cardAnimator', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])('* => swing', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])(1000, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_keyframes__WEBPACK_IMPORTED_MODULE_3__["swing"]))),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])('* => fadeOutRight', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])(500, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_keyframes__WEBPACK_IMPORTED_MODULE_3__["fadeOutRight"]))),
+                ])
+            ],
+            styles: [__webpack_require__(/*! ./profile.component.scss */ "./src/app/profile/profile.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], ProfileComponent);
+    return ProfileComponent;
 }());
 
 
@@ -260,6 +412,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
